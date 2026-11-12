@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects | Kevin Ace G. Arellano</title>
+  <meta name="description" content="Featured engineering and design projects by Kevin Ace G. Arellano." />
+  <meta name="theme-color" content="#fff9ef" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23285430'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-weight='700' font-size='28' fill='%23fff9ef'%3EKA%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- content database -->
+  <link rel="preconnect" href="https://myhmomlehtdncsriqwql.supabase.co" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" />
+  <script>
+    /* Set light/dark theme before the page paints (saved choice, else system setting) */
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("portfolio-theme"); } catch (e) {}
+      if (t !== "dark" && t !== "light") t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = t;
+    })();
+  </script>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/pages/projects.css" />
+</head>
+<body data-page="projects">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Header, content and footer are filled in by js/core.js from the database -->
+  <header id="site-header"></header>
+
+  <main id="main" tabindex="-1">
+    <noscript><p class="container" style="padding:3rem 1.25rem">This portfolio needs JavaScript enabled to display its content.</p></noscript>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="js/supabase-config.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/pages/projects.js"></script>
+</body>
+</html>

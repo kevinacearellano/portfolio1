@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Portfolio Admin</title>
+  <meta name="theme-color" content="#fff9ef" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23285430'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-weight='700' font-size='28' fill='%23fff9ef'%3EKA%3C/text%3E%3C/svg%3E" />
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("portfolio-theme"); } catch (e) {}
+      if (t !== "dark" && t !== "light") t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = t;
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body class="admin">
+  <div id="app" class="adm-app">
+    <div class="adm-center"><p class="mono muted">Loading admin…</p></div>
+  </div>
+
+  <!-- unsaved-changes bar -->
+  <div class="save-bar" id="saveBar" hidden>
+    <span class="save-bar-text"><span class="ms" aria-hidden="true">edit_note</span><span>You have unsaved changes</span></span>
+    <span class="save-bar-actions">
+      <button type="button" class="btn btn-cream btn-sm" id="discardBtn">Discard</button>
+      <button type="button" class="btn btn-primary btn-sm" id="saveBarBtn"><span class="ms" aria-hidden="true">save</span><span>Save changes</span></button>
+    </span>
+  </div>
+
+  <!-- image picker -->
+  <dialog class="modal media-modal" id="mediaDialog" aria-labelledby="mediaDialogTitle">
+    <div class="modal-inner">
+      <div class="modal-head">
+        <h2 class="h-sm" id="mediaDialogTitle">Choose an image</h2>
+        <button type="button" class="icon-btn" data-close aria-label="Close"><span class="ms" aria-hidden="true">close</span></button>
+      </div>
+      <div id="mediaDialogBody"></div>
+    </div>
+  </dialog>
+
+  <div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+
+  <script src="../js/supabase-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

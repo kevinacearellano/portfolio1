@@ -1,0 +1,45 @@
+/* Skills page styles (skills.html) */
+.skills-topbar { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .75rem; margin-bottom: 2rem; }
+.stat-card {
+  display: flex; align-items: center; gap: 1.5rem; justify-content: space-between;
+  padding: 1.25rem 1.4rem; border-radius: var(--r-lg);
+  background: var(--surface-low); box-shadow: 0 0 0 1px var(--hairline);
+  min-width: 15rem;
+}
+.stat-value { display: block; font-size: 2rem; font-weight: 600; line-height: 1.1; color: var(--text); }
+.stat-card > div > span { display: block; font-size: .82rem; color: var(--text-variant); }
+.page-hero .filter-bar { margin-top: 2rem; }
+
+.skill-groups { display: flex; flex-direction: column; gap: 3.5rem; }
+.skill-group { display: flex; flex-direction: column; gap: 1.5rem; }
+.group-head { display: grid; grid-template-columns: auto 1fr; gap: .9rem; align-items: center; }
+.group-head .icon-box { width: 2.25rem; height: 2.25rem; }
+.group-sub { font-size: .82rem; color: var(--text-variant); }
+.group-badge { grid-column: 1 / -1; justify-self: start; }
+@media (min-width: 700px) {
+  .group-head { grid-template-columns: auto 1fr auto; }
+  .group-badge { grid-column: auto; justify-self: end; }
+}
+
+.skill-grid { display: grid; gap: 1.25rem; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .skill-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .skill-grid { grid-template-columns: repeat(var(--cols, 3), 1fr); } }
+
+.skill-card { display: flex; flex-direction: column; gap: .8rem; padding: 1.4rem; }
+.skill-card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: .6rem; }
+.skill-card .text-sm { font-size: .84rem; flex: 1; }
+.skill-card-bottom { display: flex; flex-direction: column; gap: 1.1rem; margin-top: .4rem; }
+.skill-card:hover .icon-box--cream { background: var(--primary-container); color: var(--white); }
+.skill-card .icon-box { transition: background .25s, color .25s; }
+
+.principle-card { display: flex; flex-direction: column; overflow: hidden; }
+.principle-body { padding: 1.5rem; display: flex; flex-direction: column; gap: .8rem; flex: 1; }
+.principle-body .icon-box { margin-bottom: .6rem; }
+.principle-body .eyebrow-sm { color: var(--text); font-weight: 600; }
+.principle-foot {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: .9rem 1.5rem; border-top: 1px solid var(--hairline);
+  background: var(--tint); font-size: 10.5px; color: var(--text-variant);
+}
+.principle-foot .ms { color: var(--secondary); font-size: 17px; }
+

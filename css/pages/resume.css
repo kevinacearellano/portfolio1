@@ -1,0 +1,67 @@
+/* Resume page styles (resume.html) — paper sheet on screen, clean one-column print/PDF */
+.rs-page { padding-block: 2rem 4rem; }
+
+.rs-toolbar {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;
+  max-width: calc(8.5in + 2 * var(--gutter)); margin-bottom: 1.5rem;
+}
+.rs-toolbar .eyebrow-sm .ms { font-size: 16px; }
+.rs-actions { display: flex; flex-direction: column; align-items: flex-end; gap: .35rem; }
+.rs-hint { font-size: 10.5px; color: var(--text-muted); }
+
+/* the sheet — always white paper with dark ink, in both themes */
+.rs-paper {
+  --ink: #1d221c; --ink-soft: #4a5248; --rule: #285430;
+  width: calc(100% - 2 * var(--gutter)); max-width: 8.5in; margin-inline: auto;
+  padding: clamp(1.25rem, 5vw, 0.6in);
+  background: #ffffff; color: var(--ink);
+  border-radius: 4px; box-shadow: 0 0 0 1px var(--hairline), 0 20px 50px -20px rgba(0, 0, 0, .25);
+  font-size: 10pt; line-height: 1.45;
+}
+.rs-paper a { color: inherit; text-decoration: none; }
+.rs-paper a:hover { text-decoration: underline; }
+
+.rs-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; padding-bottom: .6rem; border-bottom: 2px solid var(--rule); }
+.rs-name { font-size: 22pt; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; color: var(--ink); }
+.rs-headline { font-size: 11pt; font-weight: 500; color: var(--rule); margin-top: .2rem; }
+.rs-contact { font-size: 9pt; color: var(--ink-soft); margin-top: .45rem; display: flex; flex-wrap: wrap; gap: .15rem .45rem; }
+.rs-sep { color: #b9c2b0; }
+.rs-photo { width: 0.95in; height: 0.95in; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+
+.rs-section { margin-top: .9rem; }
+.rs-h {
+  font-size: 10.5pt; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--rule); padding-bottom: .2rem; margin-bottom: .45rem; border-bottom: 1px solid #d5dccf;
+}
+.rs-entry { margin-bottom: .6rem; break-inside: avoid; }
+.rs-entry:last-child { margin-bottom: 0; }
+.rs-row { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+.rs-title { font-size: 10.5pt; font-weight: 600; color: var(--ink); }
+.rs-muted { font-weight: 400; color: var(--ink-soft); }
+.rs-date { font-size: 9.5pt; color: var(--ink-soft); white-space: nowrap; }
+.rs-org { font-size: 9.5pt; font-style: italic; color: var(--ink-soft); }
+.rs-text { margin-top: .2rem; }
+.rs-skill + .rs-skill { margin-top: .15rem; }
+.rs-bullets { list-style: disc; padding-left: 1.1rem; margin-top: .25rem; }
+.rs-bullets li + li { margin-top: .15rem; }
+.rs-bullets li::marker { color: var(--rule); }
+
+@media (max-width: 560px) {
+  .rs-row { flex-direction: column; gap: 0; }
+  .rs-actions { align-items: flex-start; }
+}
+
+/* ---------- print / Save as PDF: only the resume ---------- */
+@media print {
+  html, body { background: #ffffff !important; }
+  .site-header, .site-footer, .rs-toolbar, .skip-link { display: none !important; }
+  main { padding: 0 !important; min-height: 0; }
+  .rs-page { padding: 0; }
+  .rs-paper {
+    width: 100%; max-width: none; margin: 0; padding: 0;
+    box-shadow: none; border-radius: 0; font-size: 10pt;
+  }
+  .rs-paper a { text-decoration: none; }
+  .rs-h { break-after: avoid; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}

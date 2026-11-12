@@ -1,0 +1,86 @@
+/* Education page styles (education.html) */
+.edu-stats { display: flex; flex-wrap: wrap; gap: .9rem; }
+.edu-stat {
+  display: flex; align-items: center; gap: .9rem;
+  padding: 1rem 1.25rem 1rem 1rem; border-radius: var(--r-lg);
+  background: var(--card-soft); box-shadow: 0 0 0 1px var(--hairline), var(--shadow-1);
+  transition: transform .25s var(--ease);
+}
+.edu-stat:hover { transform: translateY(-2px); }
+.edu-stat strong { display: block; font-size: 1.4rem; font-weight: 500; line-height: 1.2; }
+.edu-stat small { display: block; font-size: 10.5px; color: var(--text-variant); letter-spacing: .06em; }
+
+.col-head { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: .25rem; }
+.col-head .h-md { display: flex; align-items: center; gap: .6rem; }
+.col-head .h-md .ms { color: var(--accent); font-size: 22px; }
+.col-head > .mono { font-size: 10.5px; letter-spacing: .12em; white-space: nowrap; }
+
+.degree-card { position: relative; overflow: hidden; }
+.degree-main { position: relative; padding: 1.5rem; display: flex; flex-direction: column; gap: .8rem; }
+.tag-row { display: flex; flex-wrap: wrap; gap: .5rem; }
+.degree-school { display: flex; align-items: center; gap: .45rem; color: var(--secondary); font-size: .95rem; }
+.degree-photo { position: relative; border-radius: var(--r-md); overflow: hidden; aspect-ratio: 16 / 9; margin: .4rem 0 .6rem; }
+.degree-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
+.degree-card:hover .degree-photo img { transform: scale(1.03); }
+.degree-photo figcaption {
+  position: absolute; inset: auto 0 0 0; display: flex; justify-content: space-between; align-items: flex-end; gap: .5rem;
+  padding: 2rem .9rem .8rem; color: var(--white); font-size: 11px; font-weight: 600;
+  background: linear-gradient(transparent, rgba(10, 25, 12, .65));
+}
+.degree-photo figcaption > span:first-child { display: inline-flex; align-items: center; gap: .35rem; }
+.degree-photo figcaption .ms { font-size: 16px; }
+.degree-progress { background: var(--surface-low); padding: 1.1rem 1.5rem 1.3rem; display: flex; flex-direction: column; gap: .6rem; font-size: 10.5px; color: var(--text-variant); }
+.degree-progress p { display: flex; justify-content: space-between; gap: 1rem; letter-spacing: .04em; }
+.degree-progress strong { color: var(--accent); }
+
+.focus-card {
+  display: flex; gap: 1rem; align-items: flex-start;
+  padding: 1.4rem; border-radius: var(--r-lg);
+  background: var(--surface-container); transition: background .2s;
+}
+.focus-card:hover { background: var(--surface-high); }
+.focus-card .h-sm { margin-bottom: .35rem; }
+
+.cert-card { display: grid; grid-template-columns: 1fr; gap: 1rem; padding: 1.4rem; }
+.cert-body { display: flex; flex-direction: column; gap: .75rem; min-width: 0; }
+.cert-top { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem .75rem; }
+.cert-issuer { font-size: 10.5px; color: var(--text-variant); }
+.cert-status { display: inline-flex; align-items: center; gap: .3rem; font-size: 10.5px; color: var(--secondary); }
+.cert-status .ms { font-size: 16px; }
+.skill-box {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .55rem 1.3rem;
+  padding: .9rem 1rem; border-radius: var(--r-sm); background: var(--surface-low);
+  font-size: 11px; color: var(--text);
+}
+.skill-box-label { color: var(--secondary); }
+.cert-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; margin-top: .25rem; }
+.cert-gallery figure { position: relative; border-radius: var(--r-sm); overflow: hidden; aspect-ratio: 16 / 9; }
+.cert-gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s var(--ease); }
+.cert-gallery figure:hover img { transform: scale(1.06); }
+.cert-gallery figcaption { position: absolute; left: .5rem; bottom: .5rem; }
+.gallery-card {
+  grid-column: 1 / -1; display: flex; flex-direction: column; justify-content: space-between; gap: .3rem;
+  padding: .9rem 1rem; border-radius: var(--r-sm); background: var(--surface-container);
+}
+.gallery-card p { display: flex; justify-content: space-between; align-items: center; font-size: 10.5px; color: var(--text-variant); }
+.gallery-card p .ms { color: var(--secondary); font-size: 18px; }
+.gallery-card strong { font-size: 1.25rem; font-weight: 600; margin-top: .5rem; }
+.gallery-card small { font-size: .75rem; color: var(--text-variant); }
+@media (min-width: 640px) {
+  .cert-card { grid-template-columns: auto 1fr; gap: 1.25rem; padding: 1.75rem; }
+  .cert-status { margin-left: auto; }
+  .cert-gallery { grid-template-columns: repeat(3, 1fr); }
+  .gallery-card { grid-column: auto; }
+}
+
+.verify-banner {
+  display: grid; gap: 1.25rem; align-items: center;
+  padding: 1.5rem; border-radius: var(--r-lg);
+  background: var(--surface-high); box-shadow: 0 0 0 1px var(--hairline), var(--shadow-1);
+}
+.verify-banner .h-sm { margin-bottom: .25rem; }
+.verify-banner .btn { justify-self: start; }
+@media (min-width: 768px) {
+  .verify-banner { grid-template-columns: auto 1fr auto; padding: 1.75rem 2rem; }
+}
+
