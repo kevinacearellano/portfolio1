@@ -15,18 +15,22 @@
 @media (min-width: 768px) { .filter-hint { display: inline-flex; } }
 
 .project-grid { display: grid; gap: 1.5rem; grid-template-columns: 1fr; }
+/* Zigzag layout on desktop: every row is one wide (7/12) + one normal (5/12) card,
+   alternating sides — row 1 wide|normal, row 2 normal|wide, … — so rows always fill
+   no matter how many projects there are. (4n+1 and 4n+4 are the wide ones.) */
 @media (min-width: 900px) {
   .project-grid { grid-template-columns: repeat(12, 1fr); }
   .project-card { grid-column: span 5; }
-  .project-card.is-featured { grid-column: span 7; }
+  .project-card:nth-child(4n+1), .project-card:nth-child(4n+4) { grid-column: span 7; }
+  .project-card:last-child:nth-child(odd) { grid-column: 1 / -1; }   /* odd one out spans the row */
   .project-grid.is-filtered .project-card { grid-column: span 6; }
 }
 .project-card { display: flex; flex-direction: column; overflow: hidden; }
 .project-media { position: relative; height: 230px; background: var(--surface-container); overflow: hidden; }
-.project-card.is-featured .project-media { height: 260px; }
 @media (min-width: 900px) {
   .project-media { height: 220px; }
-  .project-card.is-featured .project-media { height: 280px; }
+  .project-grid:not(.is-filtered) .project-card:nth-child(4n+1) .project-media,
+  .project-grid:not(.is-filtered) .project-card:nth-child(4n+4) .project-media { height: 280px; }
 }
 .project-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
 /* shown when a project has no picture yet */
