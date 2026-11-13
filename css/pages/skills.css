@@ -30,7 +30,17 @@
 .skill-card .text-sm { font-size: .84rem; flex: 1; }
 .skill-card-bottom { display: flex; flex-direction: column; gap: 1.1rem; margin-top: .4rem; }
 .skill-card:hover .icon-box--cream { background: var(--primary-container); color: var(--white); }
-.skill-card .icon-box { transition: background .25s, color .25s; }
+.skill-card .icon-box { transition: background .25s, color .25s, transform .25s var(--ease); }
+
+/* real software logo (uploaded in admin) — light tile so dark & colored logos stay visible in both themes */
+.skill-logo {
+  width: 3rem; height: 3rem; padding: .5rem;
+  border-radius: var(--r-md);
+  background: #ffffff;
+  box-shadow: 0 0 0 1px var(--hairline), 0 2px 8px rgba(0, 0, 0, .12);
+}
+.skill-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.skill-card:hover .skill-logo { transform: translateY(-2px) scale(1.05); }
 
 .principle-card { display: flex; flex-direction: column; overflow: hidden; }
 .principle-body { padding: 1.5rem; display: flex; flex-direction: column; gap: .8rem; flex: 1; }

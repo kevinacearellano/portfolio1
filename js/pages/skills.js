@@ -1,7 +1,12 @@
 /* Skills page (skills.html) — renders the "skills" section loaded by core.js */
 (function () {
   "use strict";
-  const { D, esc, icon, list, $$, button } = window.Portfolio;
+  const { D, esc, icon, list, $$, button, safeUrl } = window.Portfolio;
+
+  // uploaded logo picture if set, otherwise the Material icon
+  const skillMark = (it) => it.logo
+    ? `<span class="icon-box skill-logo"><img src="${esc(safeUrl(it.logo))}" alt="${esc(it.name)} logo" loading="lazy" decoding="async" /></span>`
+    : `<span class="icon-box icon-box--cream">${icon(it.icon)}</span>`;
 
   function renderSkills(root) {
     const s = D.skills, pr = s.principles;
@@ -46,7 +51,7 @@
                 ${list(c.items, (it) => `
                   <article class="skill-card card reveal">
                     <div class="skill-card-top">
-                      <span class="icon-box icon-box--cream">${icon(it.icon)}</span>
+                      ${skillMark(it)}
                       <span class="tag tag--sage">${esc(it.level)}</span>
                     </div>
                     <h3 class="h-sm">${esc(it.name)}</h3>

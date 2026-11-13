@@ -1,7 +1,12 @@
 /* Contact page (contact.html) — renders the "contact" section loaded by core.js */
 (function () {
   "use strict";
-  const { D, esc, icon, hrefAttrs, list, $, $$ } = window.Portfolio;
+  const { D, esc, icon, hrefAttrs, safeUrl, list, $, $$ } = window.Portfolio;
+
+  // uploaded logo picture if set, otherwise the Material icon
+  const profileMark = (p) => p.logo
+    ? `<span class="profile-logo"><img src="${esc(safeUrl(p.logo))}" alt="" loading="lazy" decoding="async" /></span>`
+    : icon(p.icon, "profile-icon");
 
   function renderContact(root) {
     const c = D.contact, s = D.site, f = c.form;
@@ -63,7 +68,7 @@
               <div class="grid-2 grid-2--always reveal">
                 ${list(c.profiles, (p) => `
                   <a class="profile-link card" ${hrefAttrs(p.url)}>
-                    ${icon(p.icon, "profile-icon")}
+                    ${profileMark(p)}
                     <span><small class="mono">${esc(p.label)}</small><strong>${esc(p.name)}</strong></span>
                     ${icon("north_east", "profile-arrow")}
                   </a>`)}

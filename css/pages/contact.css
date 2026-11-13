@@ -29,13 +29,24 @@ a.contact-value:hover { color: var(--foliage); }
 .location-map .chip-glass { position: relative; z-index: 2; color: var(--accent); }
 
 .profile-link { display: flex; align-items: center; gap: .65rem; padding: 1rem; }
-.profile-link > span:not(.ms) { display: flex; flex-direction: column; min-width: 0; flex: 1; }
+.profile-link > span:not(.ms):not(.profile-logo) { display: flex; flex-direction: column; min-width: 0; flex: 1; }
 .profile-link small { font-size: 10px; color: var(--text-variant); }
 .profile-link strong { font-size: .92rem; font-weight: 600; }
 .profile-icon { font-size: 22px; color: var(--secondary); transition: color .2s; }
 .profile-arrow { font-size: 18px; color: var(--text-variant); transition: transform .2s var(--ease); }
 .profile-link:hover .profile-arrow { transform: translate(2px, -2px); }
 .profile-link:hover .profile-icon { color: var(--accent); }
+
+/* real brand logo (uploaded in admin) on a light tile so it reads in both themes */
+.profile-logo {
+  flex-shrink: 0; width: 2.5rem; height: 2.5rem; padding: .45rem;
+  display: grid; place-items: center;
+  border-radius: var(--r-sm); background: #ffffff;
+  box-shadow: 0 0 0 1px var(--hairline), 0 2px 8px rgba(0, 0, 0, .12);
+  transition: transform .25s var(--ease);
+}
+.profile-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.profile-link:hover .profile-logo { transform: translateY(-2px) scale(1.05); }
 
 .form-card {
   background: var(--card); border-radius: var(--r-xl); overflow: hidden;

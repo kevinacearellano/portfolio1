@@ -5,7 +5,7 @@
   const CFG = window.SUPABASE_CONFIG || {};
   const BUCKET = CFG.bucket || "portfolio-media";
   const MAX_UPLOAD = 5 * 1024 * 1024;
-  const IMAGE_TYPES = ["image/jpeg", "image/png", "image/webp", "image/gif"];
+  const IMAGE_TYPES = ["image/jpeg", "image/png", "image/webp", "image/gif", "image/svg+xml"];
   let SNAPSHOT = {};   // content as last loaded; used as the shape for new list items
 
   const SECTION_META = {
@@ -22,6 +22,13 @@
 
   /** Objects whose keys are user-defined IDs (entries can be added/renamed). */
   const MAP_PATHS = new Set(["projects.modals"]);
+
+  /** Optional fields offered on every item of a list, even if no item uses them yet (left empty = not saved). */
+  const OPTIONAL_FIELDS = {
+    "skills.categories.items": { logo: "" },
+    "contact.profiles": { logo: "" },
+    "site.socials": { logo: "" }
+  };
 
   const HINTS = {
     icon: "Material Symbols icon name, e.g. code, palette, school",
@@ -49,7 +56,7 @@
     showPhoto: "Many employers prefer resumes without photos",
     references: "Text under References",
     additional: "Extra sections such as Languages, Volunteer work or Affiliations",
-    logo: "Optional. Leave empty to show the monogram",
+    logo: "Optional picture (PNG, SVG, WebP…). Leave empty to show the monogram / icon instead",
     phone: "Number used for the call link and copy button",
     value: "Tip: on Projects stats, {count} shows the number of projects"
   };
@@ -79,7 +86,7 @@
   const fmtSize = (b) => (b == null ? "" : b > 1048576 ? (b / 1048576).toFixed(1) + " MB" : Math.max(1, Math.round(b / 1024)) + " KB");
   const fmtDate = (d) => (d ? new Date(d).toLocaleString() : "");
   const isImageKey = (k, v) => /^(image|photo|logo|mapImage|avatar|thumbnail)$/i.test(k) ||
-    (typeof v === "string" && /\.(jpe?g|png|webp|gif)(\?.*)?$/i.test(v) && /(^images\/|^uploads\/|^https?:\/\/)/.test(v));
+    (typeof v === "string" && /\.(jpe?g|png|webp|gif|svg)(\?.*)?$/i.test(v) && /(^images\/|^uploads\/|^https?:\/\/)/.test(v));
   const isIconKey = (k) => k === "icon" || /Icon$/.test(k);
   const previewSrc = (p) => (!p ? "" : /^(https?:|data:|blob:)/.test(p) ? p : "../" + p.replace(/^\.?\//, ""));
 
@@ -178,9 +185,12 @@
   function itemTemplate(arr, path) {
     const fromLoaded = valuesAt(SNAPSHOT, normPath(path).split(".")).flatMap((a) => (Array.isArray(a) ? a : []));
     const all = [...arr, ...fromLoaded];
-    if (!all.length) return "";
+    const extra = OPTIONAL_FIELDS[normPath(path)];
+    if (!all.length) return extra ? clone(extra) : "";
     if (all.every((x) => !isObj(x))) return typeof all[0] === "number" ? 0 : "";
-    return unionShape(all.filter(isObj));
+    const shape = unionShape(all.filter(isObj));
+    if (extra) for (const k in extra) if (!(k in shape)) shape[k] = clone(extra[k]);
+    return shape;
   }
   function ensureKeys(obj, shape) {
     if (!isObj(obj) || !isObj(shape)) return;
@@ -787,15 +797,16 @@
   const WEBP_QUALITY = 0.82;
 
   function validateFile(f) {
-    if (!IMAGE_TYPES.includes(f.type)) return "Only JPG, PNG, WebP or GIF images are allowed.";
-    if (f.size > (f.type === "image/gif" ? MAX_UPLOAD : MAX_ORIGINAL)) {
-      return `Image is too large (max ${(f.type === "image/gif" ? MAX_UPLOAD : MAX_ORIGINAL) / 1048576} MB).`;
+    if (!IMAGE_TYPES.includes(f.type)) return "Only JPG, PNG, WebP, GIF or SVG images are allowed.";
+    const keepAsIs = f.type === "image/gif" || f.type === "image/svg+xml";   // uploaded without compression
+    if (f.size > (keepAsIs ? MAX_UPLOAD : MAX_ORIGINAL)) {
+      return `Image is too large (max ${(keepAsIs ? MAX_UPLOAD : MAX_ORIGINAL) / 1048576} MB).`;
     }
     return null;
   }
 
   async function compressImage(f) {
-    if (f.type === "image/gif" || !window.createImageBitmap) return f;
+    if (f.type === "image/gif" || f.type === "image/svg+xml" || !window.createImageBitmap) return f;
     let bitmap;
     try { bitmap = await createImageBitmap(f); } catch (e) { return f; }
     const scale = Math.min(1, MAX_DIMENSION / Math.max(bitmap.width, bitmap.height));
@@ -816,7 +827,7 @@
     const f = await compressImage(original);
     if (f.size > MAX_UPLOAD) { toast(`${original.name}: still larger than ${MAX_UPLOAD / 1048576} MB after compression.`, "error"); return null; }
     if (f !== original) toast(`Optimized ${original.name}: ${fmtSize(original.size)} → ${fmtSize(f.size)}`, "info");
-    const ext = { "image/jpeg": "jpg", "image/png": "png", "image/webp": "webp", "image/gif": "gif" }[f.type];
+    const ext = { "image/jpeg": "jpg", "image/png": "png", "image/webp": "webp", "image/gif": "gif", "image/svg+xml": "svg" }[f.type];
     const base = f.name.replace(/\.[^.]+$/, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 40) || "image";
     const name = `${base}-${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}.${ext}`;
     const { error } = await state.client.storage.from(BUCKET).upload(name, f, { contentType: f.type, cacheControl: "31536000", upsert: false });
@@ -828,7 +839,7 @@
   function builtInImages() {
     const found = new Set();
     (function walk(v) {
-      if (typeof v === "string" && /^images\/.+\.(jpe?g|png|webp|gif)$/i.test(v)) found.add(v);
+      if (typeof v === "string" && /^images\/.+\.(jpe?g|png|webp|gif|svg)$/i.test(v)) found.add(v);
       else if (Array.isArray(v)) v.forEach(walk);
       else if (isObj(v)) Object.values(v).forEach(walk);
     })(state.sections);
@@ -846,20 +857,59 @@
     state.media = { uploaded, builtIn: builtInImages() };
     return state.media;
   }
+  async function listMediaFresh(force) {
+    const media = await listMedia(force);
+    media.builtIn = builtInImages();   // reflect replacements made since the last load
+    return media;
+  }
 
   function isUsed(url) { return JSON.stringify(state.sections).includes(url); }
 
-  function mediaGrid(items, { onPick, onDelete } = {}) {
+  /** Section keys whose content uses this exact image path. */
+  function sectionsUsing(url) {
+    return state.order.filter((k) => JSON.stringify(state.sections[k]).includes(JSON.stringify(url)));
+  }
+
+  /** Clears every field that points at `url` (so the site falls back to its icon / monogram / no image). */
+  function clearImageEverywhere(url) {
+    const touched = new Set();
+    for (const k of state.order) {
+      (function walk(v) {
+        if (Array.isArray(v)) v.forEach((x, i) => { if (x === url) { v[i] = ""; touched.add(k); } else walk(x); });
+        else if (isObj(v)) for (const key of Object.keys(v)) { if (v[key] === url) { v[key] = ""; touched.add(k); } else walk(v[key]); }
+      })(state.sections[k]);
+    }
+    return [...touched];
+  }
+
+  async function removeBuiltIn(m) {
+    const keys = sectionsUsing(m.url);
+    const names = keys.map((k) => (SECTION_META[k] || {}).title || humanize(k));
+    if (!window.confirm(`Remove "${m.name}" from your site?\n\nIt is used in: ${names.join(", ") || "nothing"}.\nThose image fields will be emptied and saved now. Upload a replacement first if you want a new picture there.`)) return;
+    const hadEdits = new Set(keys.filter((k) => state.dirty.has(k)));
+    const touched = clearImageEverywhere(m.url);
+    touched.forEach((k) => state.dirty.add(k));
+    // sections with other unsaved edits are left for you to review & save
+    for (const k of touched) if (!hadEdits.has(k)) await saveSection(k);
+    if (hadEdits.size) toast(`"${m.name}" removed — save ${[...hadEdits].map((k) => (SECTION_META[k] || {}).title || humanize(k)).join(", ")} to finish (it had other unsaved edits)`, "info");
+    updateDirtyUI();
+    renderMedia();
+  }
+
+  function mediaGrid(items, { onPick, onDelete, onRemoveBuiltIn } = {}) {
     if (!items.length) return h("p", { class: "text-sm muted-text", text: "No images yet." });
     return h("ul", { class: "media-grid" }, items.map((m) => h("li", { class: "media-tile card" },
       h("button", { type: "button", class: "media-thumb", title: onPick ? "Use this image" : m.name, onClick: onPick ? () => onPick(m.url) : () => window.open(previewSrc(m.url), "_blank", "noopener") },
         h("img", { src: previewSrc(m.url), alt: m.name, loading: "lazy" })),
       h("div", { class: "media-meta" },
         h("span", { class: "media-name", title: m.name, text: m.name }),
-        h("span", { class: "mono media-info", text: m.builtIn ? "built-in" : [fmtSize(m.size), isUsed(m.url) ? "in use" : ""].filter(Boolean).join(" · ") })),
+        h("span", { class: "mono media-info", text: m.builtIn
+          ? "built-in · used in " + sectionsUsing(m.url).map((k) => (SECTION_META[k] || {}).title || humanize(k)).join(", ")
+          : [fmtSize(m.size), isUsed(m.url) ? "in use" : ""].filter(Boolean).join(" · ") })),
       h("div", { class: "media-actions" },
-        onPick ? btn("Use", "check", "btn-primary btn-sm", () => onPick(m.url)) : btn("Copy link", "link", "btn-cream btn-sm", () => copyText(m.builtIn ? m.url : m.url)),
-        !onPick && !m.builtIn && onDelete ? h("button", { type: "button", class: "icon-btn icon-btn--danger", title: "Delete", "aria-label": "Delete " + m.name, onClick: () => onDelete(m) }, icon("delete")) : null))));
+        onPick ? btn("Use", "check", "btn-primary btn-sm", () => onPick(m.url)) : btn("Copy link", "link", "btn-cream btn-sm", () => copyText(m.url)),
+        !onPick && !m.builtIn && onDelete ? h("button", { type: "button", class: "icon-btn icon-btn--danger", title: "Delete", "aria-label": "Delete " + m.name, onClick: () => onDelete(m) }, icon("delete")) : null,
+        !onPick && m.builtIn && onRemoveBuiltIn ? h("button", { type: "button", class: "icon-btn icon-btn--danger", title: "Remove from site", "aria-label": "Remove " + m.name + " from site", onClick: () => onRemoveBuiltIn(m) }, icon("delete")) : null))));
   }
 
   function dropZone(onDone) {
@@ -906,8 +956,8 @@
       panel("Upload", null, dropZone(() => renderMedia())),
       panel("Uploaded images", `${media.uploaded.length}`, mediaGrid(media.uploaded, { onDelete: del })),
       panel("Built-in images", "images/ folder", h("div", {},
-        h("p", { class: "text-xs muted-text", text: "These ship with the website files. To replace one, upload a new image and pick it in the field." }),
-        mediaGrid(media.builtIn))));
+        h("p", { class: "text-xs muted-text", text: "These ship with the website files and are still used by your content. To replace one, upload a new image and pick it in the field — it disappears from here once nothing uses it. Use the trash button to remove it from every place at once." }),
+        mediaGrid(media.builtIn, { onRemoveBuiltIn: removeBuiltIn }))));
   }
 
   const mediaDialog = $("#mediaDialog");
@@ -919,7 +969,7 @@
     body.replaceChildren(h("p", { class: "mono muted", text: "Loading images…" }));
     mediaDialog.showModal();
     try {
-      const media = await listMedia();
+      const media = await listMediaFresh();
       body.replaceChildren(
         dropZone((urls) => { if (urls[0]) pick(urls[0]); }),
         h("h3", { class: "eyebrow-sm media-sub", text: "Uploaded" }), mediaGrid(media.uploaded, { onPick: pick }),

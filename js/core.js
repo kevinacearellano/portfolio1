@@ -113,7 +113,9 @@
           </div>
           <div class="footer-links">
             <ul class="footer-socials">
-              ${list(s.socials, (l) => `<li><a class="mono" ${hrefAttrs(l.url)}>${icon(l.icon)}${esc(l.label)}</a></li>`)}
+              ${list(s.socials, (l) => `<li><a class="mono" ${hrefAttrs(l.url)}>${l.logo
+                ? `<img class="social-logo" src="${esc(safeUrl(l.logo))}" alt="" loading="lazy" decoding="async" />`
+                : icon(l.icon)}${esc(l.label)}</a></li>`)}
             </ul>
             <a class="footer-email mono" href="mailto:${esc(s.email)}">${esc(s.email)}</a>
           </div>
