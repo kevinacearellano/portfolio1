@@ -1,0 +1,1331 @@
+{
+  "site": {
+    "nav": [
+      {
+        "id": "home",
+        "href": "index.html",
+        "label": "Home"
+      },
+      {
+        "id": "skills",
+        "href": "skills.html",
+        "label": "Skills"
+      },
+      {
+        "id": "projects",
+        "href": "projects.html",
+        "label": "Projects"
+      },
+      {
+        "id": "experience",
+        "href": "experience.html",
+        "label": "Experience"
+      },
+      {
+        "id": "education",
+        "href": "education.html",
+        "label": "Education & Certifications"
+      },
+      {
+        "id": "resume",
+        "href": "resume.html",
+        "label": "Resume"
+      },
+      {
+        "id": "contact",
+        "href": "contact.html",
+        "label": "Contact"
+      }
+    ],
+    "logo": "https://myhmomlehtdncsriqwql.supabase.co/storage/v1/object/public/portfolio-media/logo-p-mwer6ckdzti5.webp",
+    "name": "Kevin Ace Arellano",
+    "role": "Front-End Developer",
+    "email": "kevinace.arellano@gmail.com",
+    "phone": "09690518781",
+    "socials": [
+      {
+        "url": "https://github.com/kevinacearellano",
+        "icon": "terminal",
+        "label": "GitHub"
+      },
+      {
+        "url": "https://linkedin.com",
+        "icon": "work",
+        "label": "LinkedIn"
+      },
+      {
+        "url": "mailto:kevinace.arellano@gmail.com",
+        "icon": "alternate_email",
+        "label": "Email"
+      },
+      {
+        "url": "https://www.facebook.com/ace.arellano.3766",
+        "icon": "person",
+        "logo": "",
+        "label": "Facebook"
+      }
+    ],
+    "location": "Paombong, Bulacan, Philippines",
+    "monogram": "P ",
+    "copyright": "© 2025 Kevin Ace G. Arellano. All rights reserved.",
+    "footerNote": "Designed with Warm Minimalism · Built with modern Web Standards",
+    "availability": "Available for work",
+    "phoneDisplay": "+63 969 051 8781",
+    "footerTagline": "Front-End Developer crafting thoughtful, warm digital experiences with precision engineering and organic modernism.",
+    "getInTouchLabel": "Get in Touch"
+  },
+  "home": {
+    "cta": {
+      "text": "Whether you have an upcoming project, a junior front-end opening, or simply want to connect, my inbox is always open.",
+      "title": "Ready to contribute to meaningful engineering teams.",
+      "eyebrow": "Looking Ahead",
+      "primaryButton": {
+        "href": "contact.html",
+        "icon": "arrow_forward",
+        "label": "Get in Touch"
+      },
+      "secondaryButton": {
+        "href": "projects.html",
+        "label": "Explore Portfolio"
+      }
+    },
+    "hero": {
+      "role": "Front-End Developer",
+      "intro": "Passionate about merging thoughtful design sensibilities with precision engineering. I specialize in crafting accessible, responsive web interfaces with semantic HTML, modern CSS architectures, and scalable JavaScript. Grounded in continuous learning and an appetite for elegant simplicity.",
+      "photo": "https://myhmomlehtdncsriqwql.supabase.co/storage/v1/object/public/portfolio-media/prof-mwer1jy1pl11.webp",
+      "quote": "“Building clean, functional, and user-friendly web experiences.”",
+      "subRole": "UI Enthusiast",
+      "greeting": "Hello, I am",
+      "location": "Paombong, Bulacan, Philippines",
+      "photoAlt": "Kevin Ace working at a wooden desk with a laptop, surrounded by plants",
+      "codeLines": [
+        {
+          "key": "name",
+          "value": "Kevin Ace G. Arellano"
+        },
+        {
+          "key": "role",
+          "value": "Front-End  Developer"
+        },
+        {
+          "key": "mindset",
+          "value": "Clean Code & Tactile Design"
+        },
+        {
+          "key": "status",
+          "value": "Ready to contribute & grow"
+        }
+      ],
+      "nameLine1": "Kevin Ace G.",
+      "nameLine2": "Arellano",
+      "stackTags": [
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "UI/UX"
+      ],
+      "textButton": {
+        "href": "mailto:kevinace.arellano@gmail.com",
+        "icon": "alternate_email",
+        "label": "Say Hi"
+      },
+      "codeFileName": "kevin-profile.ts",
+      "photoCaption": "Bulacan, PH · 14.85° N, 120.78° E",
+      "floatingBadge": {
+        "icon": "code_blocks",
+        "title": "Semantic & Modern",
+        "subtitle": "Crafted with precision"
+      },
+      "primaryButton": {
+        "href": "projects.html",
+        "icon": "arrow_forward",
+        "label": "View My Work"
+      },
+      "secondaryButton": {
+        "href": "contact.html",
+        "icon": "send",
+        "label": "Contact Me"
+      }
+    },
+    "pageTitle": "Kevin Ace G. Arellano | Front-End Developer",
+    "highlights": [
+      {
+        "icon": "devices",
+        "label": "Primary Focus",
+        "value": "Modern Web Apps"
+      },
+      {
+        "icon": "explore",
+        "label": "Base Location",
+        "value": "Bulacan, Philippines"
+      },
+      {
+        "icon": "work_outline",
+        "label": "Availability",
+        "value": "Junior / Intern Roles"
+      },
+      {
+        "icon": "draw",
+        "label": "Core Craft",
+        "value": "UI Design & Code"
+      }
+    ],
+    "philosophy": {
+      "text": "Every project reflects a commitment to clean structure, intuitive interaction patterns, and human-centered design.",
+      "cards": [
+        {
+          "icon": "dataset",
+          "note": "WCAG compliant & accessible",
+          "text": "Writing structured, accessible HTML paired with maintainable CSS ensures scalable foundations and excellent SEO out of the box.",
+          "title": "Semantic Architecture"
+        },
+        {
+          "icon": "palette",
+          "note": "Tactile micro-interactions",
+          "text": "Balancing calm organic color palettes with calculated typographic scales to build pleasant interfaces users love navigating.",
+          "title": "Intuitive Aesthetics"
+        },
+        {
+          "icon": "trending_up",
+          "note": "Always learning & shipping",
+          "text": "Constantly refining technical capabilities in modern frontend ecosystems, experimenting with new patterns, and embracing peer feedback.",
+          "title": "Growth Mindset"
+        }
+      ],
+      "title": "Rooted in simplicity, engineered for performance.",
+      "eyebrow": "Design Philosophy"
+    }
+  },
+  "skills": {
+    "cta": {
+      "text": "Explore live deployments featuring semantic layouts, custom CSS animations, and reactive state management.",
+      "title": "Curious how these tools translate into real products?",
+      "button": {
+        "href": "projects.html",
+        "icon": "arrow_forward",
+        "label": "Explore Projects"
+      },
+      "eyebrow": "See It in Action"
+    },
+    "stat": {
+      "icon": "terminal",
+      "label": "Core technologies actively used",
+      "value": "10+"
+    },
+    "intro": "A curated collection of frameworks, languages, and creative tools I utilize to craft digital products that seamlessly bridge thoughtful aesthetics with rock-solid code.",
+    "title": "Technical & Creative Skills",
+    "eyebrow": "// Technical Proficiency & Tooling",
+    "pageTitle": "Skills | Kevin Ace G. Arellano",
+    "categories": [
+      {
+        "id": "frontend",
+        "icon": "web",
+        "badge": "Primary Specialization",
+        "items": [
+          {
+            "icon": "code",
+            "logo": "https://myhmomlehtdncsriqwql.supabase.co/storage/v1/object/public/portfolio-media/html-mweq4n8k71d5.webp",
+            "name": "HTML5",
+            "tags": [
+              "Semantics",
+              "ARIA / a11y",
+              "DOM API"
+            ],
+            "text": "Semantic markup architecture, rigorous web accessibility (WCAG), SEO meta structuring, and modern standards.",
+            "level": "Advanced",
+            "percent": 90
+          },
+          {
+            "icon": "style",
+            "logo": "https://myhmomlehtdncsriqwql.supabase.co/storage/v1/object/public/portfolio-media/css-removebg-preview-mweq7y2skxij.webp",
+            "name": "CSS3 / Modern Styling",
+            "tags": [
+              "Tailwind",
+              "Grid / Flex",
+              "Keyframes"
+            ],
+            "text": "Mastery of Flexbox, CSS Grid systems, scalable fluid responsiveness, CSS custom properties, and Tailwind CSS.",
+            "level": "Advanced",
+            "percent": 88
+          },
+          {
+            "icon": "javascript",
+            "logo": "https://myhmomlehtdncsriqwql.supabase.co/storage/v1/object/public/portfolio-media/js-mweq4n0niwp3.webp",
+            "name": "JavaScript",
+            "tags": [
+              "ES6+",
+              "Async / REST",
+              "DOM Ops"
+            ],
+            "text": "ES6+ syntax standards, dynamic DOM manipulation, async/await patterns, Fetch API integrations, and event handling.",
+            "level": "Proficient",
+            "percent": 51
+          },
+          {
+            "icon": "design_services",
+            "logo": "https://myhmomlehtdncsriqwql.supabase.co/storage/v1/object/public/portfolio-media/figma-mweq4mp9p3yp.png",
+            "name": "Figma",
+            "tags": [
+              "Auto-Layout",
+              "Wireframes",
+              "Prototypes"
+            ],
+            "text": "UI/UX wireframing, interactive high-fidelity prototypes, auto-layout design systems, and developer handoff specs.",
+            "level": "Proficient",
+            "percent": 80
+          }
+        ],
+        "title": "01. Frontend Development",
+        "subtitle": "Core interface engineering, semantic markup, and visual systems",
+        "filterLabel": "Frontend Development"
+      },
+      {
+        "id": "languages",
+        "icon": "data_object",
+        "badge": "Core CS Foundations",
+        "items": [
+          {
+            "icon": "coffee",
+            "logo": "https://myhmomlehtdncsriqwql.supabase.co/storage/v1/object/public/portfolio-media/java-mweq4mcx53no.webp",
+            "name": "Java",
+            "tags": [
+              "OOP",
+              "Collections",
+              "Algorithms"
+            ],
+            "text": "Object-oriented programming architecture, data structures, robust exception handling, and algorithmic problem solving.",
+            "level": "Academic / Practical",
+            "percent": 84
+          },
+          {
+            "icon": "terminal",
+            "logo": "https://myhmomlehtdncsriqwql.supabase.co/storage/v1/object/public/portfolio-media/python-mweq4m3vp3b1.webp",
+            "name": "Python",
+            "tags": [
+              "Automation",
+              "Scripting",
+              "Backend Basics"
+            ],
+            "text": "Scripting, workflow automation, backend service fundamentals, simple data scraping, and mathematical computations.",
+            "level": "Intermediate",
+            "percent": 65
+          },
+          {
+            "icon": "integration_instructions",
+            "logo": "https://myhmomlehtdncsriqwql.supabase.co/storage/v1/object/public/portfolio-media/c-mweq4llw7reb.webp",
+            "name": "C#",
+            "tags": [
+              ".NET Core",
+              "Type Safety",
+              "LINQ Basics"
+            ],
+            "text": ".NET development fundamentals, desktop software interfaces, structured syntax, and type safety principles.",
+            "level": "Foundational",
+            "percent": 52
+          }
+        ],
+        "title": "02. Programming Languages",
+        "subtitle": "Structured logic, object-oriented concepts, and algorithmic foundations",
+        "filterLabel": "Programming Languages"
+      },
+      {
+        "id": "workflow",
+        "icon": "construction",
+        "badge": "Workflow Velocity",
+        "items": [
+          {
+            "icon": "palette",
+            "logo": "https://myhmomlehtdncsriqwql.supabase.co/storage/v1/object/public/portfolio-media/canva-mweq4lcl3f7x.webp",
+            "name": "Canva",
+            "tags": [
+              "Marketing Assets",
+              "Brand Kits",
+              "Slide Decks"
+            ],
+            "text": "Rapid brand asset generation, social media infographics, pitch decks, and visual marketing collateral.",
+            "level": "Proficient",
+            "percent": 98
+          },
+          {
+            "icon": "movie_edit",
+            "logo": "https://myhmomlehtdncsriqwql.supabase.co/storage/v1/object/public/portfolio-media/capcut-mweq4l0bqwa1.png",
+            "name": "CapCut",
+            "tags": [
+              "Motion Snippets",
+              "Audio Sync",
+              "Micro-demos"
+            ],
+            "text": "Video montage editing, motion UI demo snippets, sound design sync, and quick turn-around social content creation.",
+            "level": "Proficient",
+            "percent": 93
+          },
+          {
+            "icon": "table_chart",
+            "logo": "https://myhmomlehtdncsriqwql.supabase.co/storage/v1/object/public/portfolio-media/excel-mweq4kp5rpiy.webp",
+            "name": "Microsoft Excel",
+            "tags": [
+              "Formulas / VLOOKUP",
+              "Pivot Tables",
+              "Data Cleansing"
+            ],
+            "text": "Complex formula modeling, pivot tables, dataset hygiene, reporting summaries, and systematic inventory tracking.",
+            "level": "Advanced",
+            "percent": 90
+          }
+        ],
+        "title": "03. Tools & Productive Workflow",
+        "subtitle": "Collateral production, dynamic motion, and quantitative business tracking",
+        "filterLabel": "Tools & Workflow"
+      }
+    ],
+    "indexLabel": "Index // 02",
+    "indexTitle": "Core Capabilities",
+    "principles": {
+      "text": "Tools and frameworks evolve rapidly, but strong engineering tenets remain constant. These core principles guide every line of code and user interface I construct.",
+      "cards": [
+        {
+          "icon": "code_blocks",
+          "text": "Writing code is writing documentation for future collaborators. I prioritize semantic integrity, modular architecture, reusable components, and rigorous readability over opaque cleverness.",
+          "label": "01 // Code Craft",
+          "title": "Clean, Maintainable Code",
+          "footer": "Standard: DRY & Modular",
+          "footerIcon": "check_circle"
+        },
+        {
+          "icon": "touch_app",
+          "text": "Every transition, layout choice, and color accent serves the person on the other side of the glass. Empathy drives every interaction, ensuring accessibility, fast render budgets, and effortless navigation.",
+          "label": "02 // Human Interaction",
+          "title": "User-Centered Design",
+          "footer": "Target: WCAG 2.1 AA",
+          "footerIcon": "verified"
+        },
+        {
+          "icon": "speed",
+          "text": "Continuous learning is embedded in my engineering cycle. I quickly deconstruct emerging frameworks, internalize architectural requirements, and transform specifications into robust deliverables.",
+          "label": "03 // Agility",
+          "title": "Rapid Adaptability",
+          "footer": "Mindset: Always Iterating",
+          "footerIcon": "trending_up"
+        }
+      ],
+      "title": "Developer Philosophy",
+      "eyebrow": "// Guiding Principles"
+    },
+    "reviewLabel": "Last Stack Review:",
+    "reviewValue": "Q1 2025 // Production Ready",
+    "allFilterLabel": "All Disciplines"
+  },
+  "projects": {
+    "intro": "A curatorial collection of front-end applications, desktop automation systems, community databases, and sustainable cultural merchandise.",
+    "items": [
+      {
+        "id": "campus-hub",
+        "meta": "LCUP Campus",
+        "tags": [
+          "HTML5",
+          "CSS3",
+          "JavaScript (ES6+)",
+          "Responsive UI",
+          "LocalStorage",
+          "PHP"
+        ],
+        "text": "A responsive web platform designed to help university students and campus organizations track, discover, and RSVP to upcoming academic and extracurricular events in real time. Features localized caching and lightweight instant search.",
+        "image": "https://myhmomlehtdncsriqwql.supabase.co/storage/v1/object/public/portfolio-media/campus-event-mweoykng3fid.webp",
+        "title": "Campus Event Hub Calendar",
+        "number": "01 / University Tool",
+        "category": "web-dev",
+        "featured": true,
+        "imageAlt": "Campus Event Hub calendar app shown on a laptop",
+        "typeLabel": "Web Application • Front-End",
+        "imageBadge": {
+          "icon": "calendar_month",
+          "label": "Real-time RSVP"
+        },
+        "statusIcon": "",
+        "statusBadge": "Live Product",
+        "primaryButton": {
+          "url": "https://campus-event-calendar-system.onrender.com/",
+          "icon": "arrow_forward",
+          "label": "View Project Details",
+          "modal": "campus-hub",
+          "iconFirst": false
+        },
+        "secondaryButton": {
+          "url": "https://campus-event-calendar-system.onrender.com/",
+          "icon": "open_in_new",
+          "label": "Live Preview",
+          "modal": ""
+        }
+      },
+      {
+        "id": "payroll",
+        "meta": "Standalone GUI",
+        "tags": [
+          "Java",
+          "OOP",
+          "Algorithm Logic"
+        ],
+        "text": "A robust Java desktop application built to automate salary computations, calculate precise overtime pay, manage standard tax and insurance deductions, and generate formatted pay slips with strict numerical fidelity.",
+        "image": "images/project-payroll.jpg",
+        "title": "Payroll Calculator",
+        "number": "02 / Automation Logic",
+        "category": "software",
+        "featured": false,
+        "imageAlt": "Payroll calculator desktop app on a laptop",
+        "typeLabel": "Software Application",
+        "imageBadge": {
+          "icon": "terminal",
+          "label": "Java Desktop Runtime"
+        },
+        "statusIcon": "",
+        "statusBadge": "",
+        "primaryButton": {
+          "url": "https://github.com",
+          "icon": "code",
+          "label": "Source Code",
+          "modal": "",
+          "iconFirst": true
+        },
+        "secondaryButton": {
+          "url": "",
+          "icon": "description",
+          "label": "View Documentation",
+          "modal": "payroll-docs"
+        }
+      },
+      {
+        "id": "barangay",
+        "meta": "LGU Database",
+        "tags": [
+          "Microsoft Excel",
+          "Advanced Formulas",
+          "Data Validation",
+          "Record Management"
+        ],
+        "text": "An organized, high-efficiency data management solution utilizing Microsoft Excel for logging community resident profiles, issuing certificates, and streamlining local barangay administration workflow.",
+        "image": "images/project-barangay.jpg",
+        "title": "Barangay Information System",
+        "number": "03 / Civic Technology",
+        "category": "design-systems",
+        "featured": false,
+        "imageAlt": "Barangay information system dashboard",
+        "typeLabel": "Information System / Data",
+        "imageBadge": {
+          "icon": "database",
+          "label": "Basic Barangay Information System"
+        },
+        "statusIcon": "",
+        "statusBadge": "",
+        "primaryButton": {
+          "url": "",
+          "icon": "visibility",
+          "label": "View System Overview",
+          "modal": "barangay",
+          "iconFirst": false
+        },
+        "secondaryButton": {
+          "url": "",
+          "icon": "article",
+          "label": "Case Study",
+          "modal": "case-study"
+        }
+      },
+      {
+        "id": "bag",
+        "meta": "Design Competition Finalist",
+        "tags": [
+          "Creative Design",
+          "Concept Art",
+          "Cultural Heritage Research"
+        ],
+        "text": "An award-winning creative design initiative blending traditional Bulacan heritage and cultural patterns into contemporary, functional sustainable bag merchandise. Built upon extensive community research on indigenous Singkaban artistry.",
+        "image": "https://myhmomlehtdncsriqwql.supabase.co/storage/v1/object/public/portfolio-media/dti-bag-mwel628t59jq.webp",
+        "title": "DTI Bulacan Cultural Bag Design",
+        "number": "04 / Heritage & Identity",
+        "category": "design-systems",
+        "featured": true,
+        "imageAlt": "Bulacan cultural tote bag with Singkaban and Barasoain Church Design",
+        "typeLabel": "Creative Product Design",
+        "imageBadge": {
+          "icon": "palette",
+          "label": "Bulacan Heritage Series"
+        },
+        "statusIcon": "military_tech",
+        "statusBadge": "Top Design Award",
+        "primaryButton": {
+          "url": "https://www.facebook.com/photo/?fbid=740751581413763&set=pcb.740750824747172",
+          "icon": "gallery_thumbnail",
+          "label": "View Exhibition",
+          "modal": "exhibition",
+          "iconFirst": false
+        },
+        "secondaryButton": {
+          "url": "",
+          "icon": "view_carousel",
+          "label": "Design Showcase",
+          "modal": "showcase"
+        }
+      }
+    ],
+    "stats": [
+      {
+        "label": "Artifacts",
+        "value": "{count}"
+      },
+      {
+        "label": "Hand-Crafted",
+        "value": "100%"
+      },
+      {
+        "label": "Bulacan",
+        "value": "PH"
+      }
+    ],
+    "title": "Featured Engineering & Design",
+    "modals": {
+      "barangay": {
+        "tag": "Municipal Data Solution",
+        "link": "mailto:kevinace.arellano@gmail.com",
+        "text": "Streamlined local government operations across Paombong, Bulacan by structuring resident records and streamlining clearances.",
+        "title": "Barangay Information System",
+        "highlights": [
+          "Automated validation checks preventing redundant citizen records",
+          "VLOOKUP & INDEX/MATCH data querying producing printable certificates within seconds",
+          "Protected spreadsheet schemas ensuring data integrity across multiple administrative staff"
+        ]
+      },
+      "showcase": {
+        "tag": "Visual Assets & Concept Art",
+        "link": "mailto:kevinace.arellano@gmail.com",
+        "text": "Full portfolio deck covering brand narrative, typography pairing, pattern exploration, and consumer prototype reviews.",
+        "title": "Bulacan Heritage Bag — Design Showcase",
+        "highlights": [
+          "Multiple iterations crafted via Canva and vector concept art tools",
+          "Detailed color harmonies derived from native flora and folk arts",
+          "Comprehensive mockups across tote, messenger, and pouch variations"
+        ]
+      },
+      "campus-hub": {
+        "tag": "Front-End Architecture",
+        "link": "https://campus-event-calendar-system.onrender.com/",
+        "text": "Built specifically for university clubs at Bulacan State University to coordinate schedules without overlapping venues.",
+        "title": "Campus Event Hub Calendar",
+        "highlights": [
+          "State persistence handled through clean LocalStorage abstraction layers",
+          "Responsive layout adapts cleanly from single-column mobile viewports to calendar grids",
+          "Search query parser with instant debounced results"
+        ]
+      },
+      "case-study": {
+        "tag": "Civic Process Modernization",
+        "link": "mailto:kevinace.arellano@gmail.com",
+        "text": "A complete workflow audit illustrating how manual paper filing was replaced by structured record management, cutting issuance processing time by 70%.",
+        "title": "Barangay Information System — Case Study",
+        "highlights": [
+          "Stakeholder interviews conducted with local barangay executives",
+          "Zero-software-overhead deployment targeting existing spreadsheet installations",
+          "Structured schema documentation and staff onboarding guide"
+        ]
+      },
+      "exhibition": {
+        "tag": "Creative Merchandise & Identity",
+        "link": "https://www.facebook.com/photo/?fbid=740751581413763&set=pcb.740750824747172",
+        "text": "A fusion of historical Bulakenyo crafts with modern everyday fashion, featuring iconic bamboo carving and festive Singkaban silhouettes.",
+        "title": "Bulacan Cultural Bag Design",
+        "highlights": [
+          "Recognized as a leading entry in regional cultural design showcases",
+          "Sustainable canvas and jute material specifications",
+          "Aryclic Paint and Canvas honoring traditional festival aesthetics and national heritage"
+        ]
+      },
+      "payroll-docs": {
+        "tag": "Java Application Architecture",
+        "link": "https://github.com",
+        "text": "Comprehensive employee payroll engine managing regular hours, Philippine statutory contributions (SSS, PhilHealth, Pag-IBIG), and overtime multipliers.",
+        "title": "Payroll Calculator & Tax Deductor",
+        "highlights": [
+          "Strict Object-Oriented Design isolating computation algorithms from UI rendering",
+          "Robust exception-handling for invalid employee data entry",
+          "Modular printable slip formatter with clean tabular alignment",
+          "Swing/AWT components styled for clarity and ergonomic data entry"
+        ]
+      }
+    },
+    "eyebrow": "Selected Works • 2022 – Present",
+    "filters": [
+      {
+        "id": "web-dev",
+        "label": "Web Dev"
+      },
+      {
+        "id": "software",
+        "label": "Software"
+      },
+      {
+        "id": "design-systems",
+        "label": "Design & Systems"
+      }
+    ],
+    "pageTitle": "Projects | Kevin Ace G. Arellano",
+    "emptyState": {
+      "text": "Try selecting a different filter category to explore other technical and creative works.",
+      "title": "No matching projects found",
+      "button": "Reset to All Works"
+    },
+    "filterHint": "Interactive Filter View",
+    "philosophy": {
+      "icon": "developer_board",
+      "text": "My development lifecycle treats every artifact — whether a strict Java computation engine or an event scheduling single-page app — with equal care for responsive performance, usability, and local context.",
+      "cards": [
+        {
+          "tag": "Web Standard",
+          "icon": "devices",
+          "text": "Cross-browser tested interfaces designed to run cleanly even on constrained campus hardware.",
+          "title": "Accessible & Fluid"
+        },
+        {
+          "tag": "Integrity",
+          "icon": "verified_user",
+          "text": "Fault-tolerant mathematical modeling in desktop apps and structured Excel formulas.",
+          "title": "Robust Computations"
+        },
+        {
+          "tag": "Heritage",
+          "icon": "forest",
+          "text": "Deep design roots tied to Bulacan’s historic crafts, transformed into modern visuals.",
+          "title": "Regional Identity"
+        },
+        {
+          "tag": "Optimization",
+          "icon": "speed",
+          "text": "Prioritizing zero fluff, ultra-fast load times, and structured code architecture.",
+          "title": "Clean Execution"
+        }
+      ],
+      "title": "From Algorithmic Precision to Culturally Aware Design",
+      "eyebrow": "Engineering Philosophy",
+      "linkButton": {
+        "href": "https://github.com/kevinacearellano",
+        "icon": "arrow_outward",
+        "label": "Inspect on GitHub"
+      },
+      "primaryButton": {
+        "href": "mailto:kevinace.arellano@gmail.com",
+        "icon": "send",
+        "label": "Discuss a Project"
+      }
+    },
+    "modalLabels": {
+      "button": "Explore Source",
+      "heading": "Key Technical Highlights",
+      "fallbackTag": "Artifact Insight"
+    },
+    "allFilterLabel": "All Works"
+  },
+  "experience": {
+    "cta": {
+      "text": "Ready to bring hands-on ownership and design accuracy to your engineering team.",
+      "title": "Want to discuss a collaboration?",
+      "button": {
+        "href": "mailto:kevinace.arellano@gmail.com",
+        "icon": "mail",
+        "label": "Discuss Opportunities"
+      }
+    },
+    "jobs": [
+      {
+        "type": "Freelance Creative Business",
+        "image": "https://myhmomlehtdncsriqwql.supabase.co/storage/v1/object/public/portfolio-media/charcoal-portrait-mwep3gp28mo4.webp",
+        "title": "Owner / Artist – SketchAce Charcoal Portrait Commissions",
+        "duties": [
+          {
+            "icon": "draw",
+            "text": "Handcrafted photorealistic charcoal portraits tailored to personalized client specifications and exacting artistic standards.",
+            "title": "Photorealistic Rendering"
+          },
+          {
+            "icon": "sync_saved_locally",
+            "text": "Managed client consultations, project revisions, pricing schedules, and secure, on-time protective packaging and transit.",
+            "title": "Consultative Operations"
+          },
+          {
+            "icon": "aspect_ratio",
+            "text": "Leveraged acute attention to visual detail, proportion, shading, and aesthetic composition—skills directly translating into front-end visual fidelity and pixel-perfect design.",
+            "title": "Visual Detail Translation"
+          }
+        ],
+        "period": "2022 – Present",
+        "current": true,
+        "summary": "End-to-end management of custom fine art commissions with uncompromising fidelity, strict deliverables, and bespoke client engagement.",
+        "category": {
+          "icon": "palette",
+          "label": "Visual Arts & Client Service"
+        },
+        "imageAlt": "Hand drawing a photorealistic charcoal portrait",
+        "imageIcon": "verified",
+        "competencies": [
+          "Pixel-Level Precision",
+          "Client Milestone Management",
+          "Spatial Composition",
+          "Iterative Revisions"
+        ],
+        "imageCaption": "Handcrafted Realism"
+      },
+      {
+        "type": "E-Commerce & Retail Operations",
+        "image": "https://myhmomlehtdncsriqwql.supabase.co/storage/v1/object/public/portfolio-media/thrift-mwep605ubuqa.webp",
+        "title": "Online Seller – Second Soul Thrift Business",
+        "duties": [
+          {
+            "icon": "photo_camera",
+            "text": "Directed product photography, digital catalog curation, and social media marketing across digital platforms.",
+            "title": "Curation & Digital Presence"
+          },
+          {
+            "icon": "table_chart",
+            "text": "Handled inventory tracking, order fulfillment, customer inquiries, and financial record-keeping using digital spreadsheets.",
+            "title": "Inventory & Operations"
+          },
+          {
+            "icon": "forum",
+            "text": "Cultivated strong customer communication, market adaptability, and agile problem solving under real business constraints.",
+            "title": "Agile Customer Interaction"
+          }
+        ],
+        "period": "2024 – 2025",
+        "current": false,
+        "summary": "Spearheaded an independent online apparel micro-venture balancing content curation, customer journey fulfillment, and data-driven bookkeeping.",
+        "category": {
+          "icon": "storefront",
+          "label": "Digital Commerce & Logistics"
+        },
+        "imageAlt": "Folded apparel",
+        "imageIcon": "local_mall",
+        "competencies": [
+          "Hand Picked Items",
+          "Selected Branded Clothings",
+          "Growth Agility"
+        ],
+        "imageCaption": "E-Commerce Workflow"
+      }
+    ],
+    "intro": "Demonstrated initiative, creative problem solving, client communication, and operational excellence.",
+    "title": "Work & Entrepreneurial Experience",
+    "status": {
+      "label": "Current Status",
+      "value": "Active Freelance & Dev Seeking"
+    },
+    "eyebrow": "Track Record & Initiative",
+    "pageTitle": "Experience | Kevin Ace G. Arellano",
+    "strengths": {
+      "icon": "psychology",
+      "text": "How real-world creative discipline and commercial execution elevate code into reliable client outcomes.",
+      "items": [
+        {
+          "icon": "center_focus_strong",
+          "text": "Photorealistic charcoal rendering requires millimetric accuracy in light, tone, and hierarchy. This translates directly into crafting pixel-perfect interfaces, resolving subtle CSS quirks, and maintaining design tokens.",
+          "title": "Attention to Detail"
+        },
+        {
+          "icon": "chat",
+          "text": "Handling individual buyers and commission clients honed empathetic listening, clear expectation-setting, proactive project updates, and positive handling of scope adjustments.",
+          "title": "Client-First Communication"
+        },
+        {
+          "icon": "rocket_launch",
+          "text": "Building small enterprises from scratch requires self-direction, rapid debugging of operational bottlenecks, resourcefulness, and a strong sense of end-to-end accountability.",
+          "title": "Entrepreneurial Drive"
+        }
+      ],
+      "title": "Transferable Developer Strengths",
+      "closing": "Not just writing markup, but owning the deliverable from ideation to release.",
+      "eyebrow": "Cross-Functional Bridge"
+    },
+    "eyebrowIcon": "history_edu",
+    "competenciesLabel": "Key Competencies:",
+    "competencyBalance": {
+      "bars": [
+        {
+          "label": "Visual Fidelity & Proportion",
+          "percent": 98
+        },
+        {
+          "label": "Client Empathy & Feedback",
+          "percent": 95
+        },
+        {
+          "label": "Self-Starting Execution",
+          "percent": 100
+        }
+      ],
+      "title": "Competency Balance",
+      "footer": {
+        "icon": "verified_user",
+        "label": "Proven Reliability",
+        "value": "100% On-Time"
+      },
+      "eyebrow": "Discipline Index"
+    }
+  },
+  "education": {
+    "intro": "Academic milestones, specialized training, and verified achievements in technology and design.",
+    "stats": [
+      {
+        "dark": true,
+        "icon": "school",
+        "label": "Class of 2027",
+        "value": "BSIT"
+      },
+      {
+        "dark": false,
+        "icon": "stars",
+        "label": "Dean's Lister",
+        "value": "2×"
+      },
+      {
+        "dark": false,
+        "icon": "workspace_premium",
+        "label": "Certifications & Awards",
+        "value": "8"
+      }
+    ],
+    "title": "Education & Certifications",
+    "events": [
+      {
+        "date": "2026",
+        "icon": "flight_takeoff",
+        "link": "https://www.facebook.com/share/p/1DyiLo3we8/",
+        "text": "Joined an intensive program introducing study and career pathways in Taiwan.",
+        "type": "Program",
+        "title": "Study in Taiwan 2026 — Intensive Program",
+        "location": "Clark, Pampanga",
+        "linkLabel": "View post",
+        "organizer": "Study in Taiwan"
+      },
+      {
+        "date": "Sep 16, 2026",
+        "icon": "rocket_launch",
+        "text": "Took part in a career-readiness event focused on inspiration, connection and purpose for future IT professionals.",
+        "type": "Participation",
+        "title": "Pace Level Up V.7.1",
+        "location": "Bulacan",
+        "organizer": "KadaKareer Hubs × JPSSITE-LCUP"
+      },
+      {
+        "date": "May 27, 2024",
+        "icon": "code_blocks",
+        "type": "Attendance",
+        "theme": "Coding for Impact: Leveraging Technology to Solve Real-World Challenges",
+        "title": "Pace Level Up v4.3",
+        "location": "St. Augustine Bldg., LCUP, Malolos City",
+        "organizer": "JPSSITE · CITE, La Consolacion University Philippines"
+      }
+    ],
+    "degrees": [
+      {
+        "text": "Enrolled in an intensive IT curriculum integrating software design patterns, full-stack application lifecycle, algorithmic problem-solving, and human-computer interaction principles.",
+        "honor": "Dean's Lister · A.Y. 2025–2026",
+        "image": "https://myhmomlehtdncsriqwql.supabase.co/storage/v1/object/public/portfolio-media/lcup-mwepcjsn0v1s.webp",
+        "years": "2024 – 2027",
+        "degree": "Bachelor of Science in Information Technology",
+        "school": "La Consolacion University Philippines (LCUP)",
+        "imageAlt": "La Consolacion University Philippines campus building with gardens",
+        "progress": {
+          "left": "Year  3 Completed",
+          "label": "Academic Progression toward BSIT",
+          "right": "Target: Magna / Cum Laude",
+          "status": "In Progress",
+          "percent": 75
+        },
+        "coursework": [
+          {
+            "icon": "code",
+            "label": "Web Development"
+          },
+          {
+            "icon": "account_tree",
+            "label": "Data Structures"
+          },
+          {
+            "icon": "developer_board",
+            "label": "Software Engineering"
+          },
+          {
+            "icon": "database",
+            "label": "Database Systems"
+          },
+          {
+            "icon": "lan",
+            "label": "Computer Networks"
+          }
+        ],
+        "imageBadge": "Expected 2027",
+        "imageLocation": "Malolos, Bulacan • LCUP",
+        "courseworkTitle": "Core Coursework Highlights"
+      },
+      {
+        "text": "Completed the first semester of BS Architecture with Dean's List standing before transferring to LCUP for Information Technology. The design foundation — visual composition, drafting precision and spatial thinking — still shapes how I build interfaces.",
+        "honor": "Dean's Lister · 1st Semester, A.Y. 2023–2024",
+        "years": "Aug – Nov 2023",
+        "degree": "Bachelor of Science in Architecture",
+        "school": "National University (NU) Baliwag",
+        "coursework": [],
+        "imageLocation": "Baliwag, Bulacan • NU",
+        "courseworkTitle": ""
+      }
+    ],
+    "eyebrow": "Accredited Credentials & Studies",
+    "focusCard": {
+      "icon": "psychology",
+      "text": "Balancing formal university theoretical principles with modern front-end application architecture to produce maintainable, accessible, and performant code.",
+      "title": "Foundational Engineering"
+    },
+    "pageTitle": "Education & Certifications | Kevin Ace G. Arellano",
+    "verification": {
+      "icon": "verified",
+      "text": "Certificates, Dean’s honor commendations, and competition citations are fully verifiable upon request for employment and internship screenings.",
+      "title": "Verified Documentation & Transcript Records",
+      "button": {
+        "href": "mailto:kevinace.arellano@gmail.com?subject=Credential%20Verification%20Inquiry",
+        "icon": "contact_page",
+        "label": "Request Credentials"
+      }
+    },
+    "eventsHeading": {
+      "icon": "groups",
+      "label": "03 / Events",
+      "title": "Seminars & Programs"
+    },
+    "certifications": [
+      {
+        "date": "Aug 8, 2026",
+        "icon": "code",
+        "link": "",
+        "text": "Completed Cisco Networking Academy's HTML Essentials course (developed with OpenEDG JS Institute), covering document structure, semantic markup, forms, tables, media and accessible page building.",
+        "badge": "Course Certificate",
+        "title": "HTML Essentials",
+        "issuer": "Cisco Networking Academy × JS Institute",
+        "skills": [
+          "Semantic HTML",
+          "Forms & Tables",
+          "Media & Links",
+          "Accessible Markup"
+        ],
+        "status": {
+          "icon": "verified",
+          "label": "Completed"
+        },
+        "iconStyle": "cream",
+        "badgeStyle": "soft",
+        "skillsLabel": "Core Skills:",
+        "credentialId": "57075c64-9ec4-4ba9-80a4-69eac00271f7"
+      },
+      {
+        "date": "Mar 23, 2026",
+        "icon": "shield_lock",
+        "link": "",
+        "text": "Microsoft-authored course delivered through La Consolacion University Philippines and CloudSwyft, introducing how organizations protect identities, devices, data and cloud workloads.",
+        "badge": "Course Completion",
+        "title": "Fundamentals of Enterprise Security",
+        "issuer": "Microsoft × LCUP Center for Lifelong Learning · CloudSwyft",
+        "skills": [
+          "Security Fundamentals",
+          "Identity & Access",
+          "Threat Protection",
+          "Data Protection"
+        ],
+        "status": {
+          "icon": "verified",
+          "label": "Completed"
+        },
+        "iconStyle": "cream",
+        "badgeStyle": "soft",
+        "skillsLabel": "Core Skills:",
+        "credentialId": ""
+      },
+      {
+        "date": "Dec 16, 2025",
+        "icon": "database",
+        "link": "https://verify.certiport.com",
+        "text": "Expert-level certification validating the ability to design and manage relational databases — building tables and relationships, writing queries, and creating forms and reports.",
+        "badge": "MOS Expert",
+        "title": "Microsoft Office Specialist: Access 2019 Expert",
+        "issuer": "Microsoft · Certiport",
+        "skills": [
+          "Database Design",
+          "Table Relationships",
+          "Queries",
+          "Forms & Reports"
+        ],
+        "status": {
+          "icon": "verified",
+          "label": "Credential Verified"
+        },
+        "iconStyle": "green",
+        "linkLabel": "Verify on Certiport",
+        "badgeStyle": "dark",
+        "skillsLabel": "Core Skills:",
+        "credentialId": "chDF-uSR4"
+      },
+      {
+        "date": "Oct 8, 2025",
+        "icon": "terminal",
+        "link": "https://www.freecodecamp.org/certification/fcc-3f34878f-5092-4062-a38f-6f7f27017439/foundational-c-sharp-with-microsoft",
+        "text": "freeCodeCamp certification built with Microsoft Learn, covering C# fundamentals from variables and data types through decision logic, arrays, methods and debugging, finished with a final exam.",
+        "badge": "Certification",
+        "title": "Foundational C# with Microsoft",
+        "issuer": "freeCodeCamp × Microsoft",
+        "skills": [
+          "C# Syntax & Types",
+          "Control Flow",
+          "Arrays & Methods",
+          "Debugging"
+        ],
+        "status": {
+          "icon": "verified",
+          "label": "Credential Verified"
+        },
+        "iconStyle": "cream",
+        "linkLabel": "View on freeCodeCamp",
+        "badgeStyle": "soft",
+        "skillsLabel": "Core Skills:",
+        "credentialId": ""
+      },
+      {
+        "date": "",
+        "icon": "css",
+        "link": "https://www.testdome.com/certificates/514673d2b7164508b169546f496c4a08",
+        "text": "Passed TestDome's timed, hands-on HTML/CSS assessment, solving practical markup and styling tasks under real-world conditions.",
+        "badge": "Skill Assessment",
+        "title": "TestDome HTML/CSS Certificate",
+        "issuer": "TestDome",
+        "skills": [
+          "HTML Structure",
+          "CSS Layout",
+          "Selectors & Styling"
+        ],
+        "status": {
+          "icon": "verified",
+          "label": "Credential Verified"
+        },
+        "iconStyle": "cream",
+        "linkLabel": "View on TestDome",
+        "badgeStyle": "soft",
+        "skillsLabel": "Tested On:",
+        "credentialId": ""
+      },
+      {
+        "date": "May 21, 2024",
+        "icon": "table_view",
+        "link": "https://verify.certiport.com",
+        "text": "Validated proficiency in managing worksheets, organizing data in tables, writing formulas and functions, and presenting data with charts and conditional formatting.",
+        "badge": "MOS Certified",
+        "title": "Microsoft Office Specialist: Excel 2019 Associate",
+        "issuer": "Microsoft · Certiport",
+        "skills": [
+          "Formulas & Functions",
+          "Tables & Ranges",
+          "Charts",
+          "Conditional Formatting"
+        ],
+        "status": {
+          "icon": "verified",
+          "label": "Credential Verified"
+        },
+        "iconStyle": "cream",
+        "linkLabel": "Verify on Certiport",
+        "badgeStyle": "soft",
+        "skillsLabel": "Core Skills:",
+        "credentialId": "wbNSU-FasQ"
+      },
+      {
+        "icon": "security",
+        "text": "Foundational proficiency in network security concepts, vulnerability assessment, safe web development practices, sanitization protocols, and defense methodologies.",
+        "badge": "Seminar Certificate",
+        "title": "Ethical Hacking Certificate",
+        "issuer": "Security Fundamentals",
+        "skills": [
+          "Penetration Basics",
+          "XSS & Injection Defense",
+          "Network Scanning",
+          "Security Headers"
+        ],
+        "status": {
+          "icon": "check_circle",
+          "label": "Completed"
+        },
+        "iconStyle": "cream",
+        "badgeStyle": "soft",
+        "skillsLabel": "Core Skills:"
+      },
+      {
+        "icon": "palette",
+        "text": "Recognized for innovative sustainable bag design celebrating local Bulacan cultural identity and artisan craftsmanship, uniting organic materials with modern functional ergonomics.",
+        "badge": "Featured Finalist",
+        "title": "DTI Bag Design Competition",
+        "issuer": "Dept. of Trade and Industry (DTI)",
+        "skills": [
+          "Cultural Heritage",
+          "Sustainable Material Sourcing",
+          "Visual Prototyping"
+        ],
+        "status": {
+          "icon": "award_star",
+          "label": "Provincial Distinction"
+        },
+        "gallery": [
+          {
+            "alt": "Awarding Ceremony Picture",
+            "image": "https://myhmomlehtdncsriqwql.supabase.co/storage/v1/object/public/portfolio-media/dti-mwel01p3ktzv.webp",
+            "caption": "Artist Awarding "
+          },
+          {
+            "alt": "Singkaban x Barasoain Church Design Bag",
+            "image": "https://myhmomlehtdncsriqwql.supabase.co/storage/v1/object/public/portfolio-media/dti-bag-mwel628t59jq.webp",
+            "caption": "DTI Bag Design"
+          }
+        ],
+        "iconStyle": "green",
+        "badgeStyle": "dark",
+        "galleryCard": {
+          "icon": "brush",
+          "text": "Human-centered ergonomics",
+          "label": "Bulacan Craft",
+          "title": "Design & UI"
+        },
+        "skillsLabel": "Design Focus:"
+      }
+    ],
+    "educationHeading": {
+      "icon": "history_edu",
+      "label": "01 / Degree",
+      "title": "Formal Education"
+    },
+    "certificationsHeading": {
+      "icon": "military_tech",
+      "label": "02 / Verified",
+      "title": "Certifications & Distinctions"
+    }
+  },
+  "contact": {
+    "faq": [
+      {
+        "icon": "schedule",
+        "text": "Prompt correspondence guaranteed within 24-48 hours on business days for all inquiries, hiring updates, and technical evaluations.",
+        "title": "Response Velocity"
+      },
+      {
+        "icon": "handshake",
+        "text": "Equipped for remote code pairing sessions, technical assessments, behavioral interviews, and portfolio walk-throughs on Google Meet or Zoom.",
+        "title": "Interview Readiness"
+      },
+      {
+        "icon": "devices",
+        "text": "Ready to deploy skills across HTML5, Modern CSS / Tailwind, JavaScript ES6+, React ecosystem, and clean Git workflows.",
+        "title": "Technical Foundation"
+      }
+    ],
+    "form": {
+      "note": "Your message will be sent directly to",
+      "title": "Send a Direct Message",
+      "eyebrow": "Message Dispatch",
+      "subjects": [
+        "Junior Front-End Developer Role",
+        "Front-End Internship / Apprenticeship",
+        "Freelance Web Project",
+        "Technical Collaboration / Open Source",
+        "General Networking & Mentorship"
+      ],
+      "nameLabel": "Full Name",
+      "emailLabel": "Email Address",
+      "messageHint": "Min. 20 characters",
+      "submitLabel": "Send Message",
+      "successText": "Thank you for reaching out. Your default email client has opened with your message drafted to Kevin Ace. I typically reply within 24 hours.",
+      "messageLabel": "Your Message",
+      "subjectLabel": "Subject / Inquiry Type",
+      "successTitle": "Message Dispatched!",
+      "namePlaceholder": "e.g. Maria Santos",
+      "emailPlaceholder": "e.g. maria@company.com",
+      "messagePlaceholder": "Share details about the role, technical requirements, project timeline, or questions you have...",
+      "subjectPlaceholder": "Select an option..."
+    },
+    "intro": "Have an open role, project inquiry, or just want to connect? I'd love to hear from you. Let's build purposeful, refined digital experiences together.",
+    "title": "Get in Touch",
+    "eyebrow": "Contact & Inquiries",
+    "mapImage": "images/contact-map.png",
+    "mapLabel": "Paombong • Bulacan",
+    "profiles": [
+      {
+        "url": "https://github.com/kevinacearellano",
+        "icon": "terminal",
+        "logo": "https://myhmomlehtdncsriqwql.supabase.co/storage/v1/object/public/portfolio-media/github-mwepu7k7pytp.webp",
+        "name": "GitHub",
+        "label": "Code"
+      },
+      {
+        "url": "https://linkedin.com",
+        "icon": "work",
+        "logo": "https://myhmomlehtdncsriqwql.supabase.co/storage/v1/object/public/portfolio-media/linkedin-mwepu68eatrd.png",
+        "name": "LinkedIn",
+        "label": "Network"
+      },
+      {
+        "url": "",
+        "icon": "check",
+        "logo": "https://myhmomlehtdncsriqwql.supabase.co/storage/v1/object/public/portfolio-media/fb-mwepu7b2st29.webp",
+        "name": "Facebook",
+        "label": "Social Media"
+      }
+    ],
+    "pageTitle": "Contact | Kevin Ace G. Arellano",
+    "emailLabel": "Email Address",
+    "phoneLabel": "Direct Contact & SMS",
+    "workModels": [
+      {
+        "label": "Remote",
+        "highlight": true
+      },
+      {
+        "label": "Hybrid",
+        "highlight": true
+      },
+      {
+        "label": "On-Site (NCR & Central Luzon)",
+        "highlight": false
+      }
+    ],
+    "availability": {
+      "icon": "radar",
+      "text": "Prepared to contribute immediately across modern component architectures, design systems, and responsive web apps.",
+      "label": "Immediate Availability",
+      "title": "Actively seeking Junior Front-End Developer & Internship opportunities."
+    },
+    "locationLabel": "Location & Work Model"
+  },
+  "resume": {
+    "note": "Generated from my portfolio and always up to date.",
+    "eyebrow": "Resume",
+    "website": "",
+    "headline": "",
+    "paperSize": "A4",
+    "showPhoto": false,
+    "additional": [
+      {
+        "text": "English (Professional), Filipino (Native)",
+        "title": "Languages"
+      }
+    ],
+    "references": "Available upon request.",
+    "showSkills": true,
+    "maxProjects": 4,
+    "showSummary": true,
+    "downloadHint": "Choose “Save as PDF” in the print window.",
+    "showProjects": true,
+    "downloadLabel": "Download PDF",
+    "showEducation": true,
+    "profileSummary": "",
+    "showExperience": true,
+    "showReferences": true,
+    "showCertifications": true
+  }
+}

@@ -1085,6 +1085,32 @@
     return out;
   }
 
+  /** Writes a backup object ({ sectionKey: content }) into the database after confirming. */
+  async function restoreBackup(data, what = "this backup") {
+    if (!isObj(data)) return toast("Backup must be an object of sections.", "error");
+    const keys = Object.keys(data).filter((k) => isObj(data[k]) && /^[a-zA-Z][a-zA-Z0-9_]{0,49}$/.test(k));
+    if (!keys.length) return toast("No sections found in that file.", "error");
+    if (!window.confirm(`Restore ${keys.length} section(s) from ${what}? This overwrites what's in the database now.\n\nTip: download a backup first if you might want today's version back.`)) return;
+    const rows = keys.map((k, i) => ({ key: k, content: data[k], sort_order: state.order.includes(k) ? state.order.indexOf(k) : state.order.length + i }));
+    const { error } = await state.client.from("portfolio_sections").upsert(rows, { onConflict: "key" });
+    if (error) return toast(errMsg(error), "error");
+    state.dirty.clear(); toast("Backup restored");
+    state.view = "section"; state.current = null;
+    await loadSections();
+  }
+
+  /** The base backup kept with the website files (backups/portfolio-baseline.json). */
+  const BASELINE_URL = "../backups/portfolio-baseline.json";
+  async function restoreBaseline() {
+    let data;
+    try {
+      const res = await fetch(BASELINE_URL, { cache: "no-store" });
+      if (!res.ok) throw new Error("Base backup file not found on the website (backups/portfolio-baseline.json).");
+      data = await res.json();
+    } catch (err) { return toast(errMsg(err), "error"); }
+    await restoreBackup(data, "the base backup");
+  }
+
   /** Hidden file input that restores a backup JSON into the database. */
   function backupRestoreInput() {
     const fileInput = h("input", { type: "file", accept: "application/json,.json", hidden: true });
@@ -1093,16 +1119,7 @@
       if (!f) return;
       let data;
       try { data = JSON.parse(await f.text()); } catch (e) { return toast("That file isn't valid JSON.", "error"); }
-      if (!isObj(data)) return toast("Backup must be an object of sections.", "error");
-      const keys = Object.keys(data).filter((k) => isObj(data[k]) && /^[a-zA-Z][a-zA-Z0-9_]{0,49}$/.test(k));
-      if (!keys.length) return toast("No sections found in that file.", "error");
-      if (!window.confirm(`Restore ${keys.length} section(s) from this backup? This overwrites what's in the database now.`)) return;
-      const rows = keys.map((k, i) => ({ key: k, content: data[k], sort_order: state.order.includes(k) ? state.order.indexOf(k) : state.order.length + i }));
-      const { error } = await state.client.from("portfolio_sections").upsert(rows, { onConflict: "key" });
-      if (error) return toast(errMsg(error), "error");
-      state.dirty.clear(); toast("Backup restored");
-      state.view = "section"; state.current = null;
-      await loadSections();
+      await restoreBackup(data);
     });
     return fileInput;
   }
@@ -1121,7 +1138,10 @@
         btn("Download backup (.json)", "download", "btn-primary btn-sm", () => download(`portfolio-backup-${stamp}.json`, JSON.stringify(allContent(), null, 2), "application/json")))),
       panel("Restore a backup", null, h("div", { class: "tool-row" },
         h("p", { class: "text-sm muted-text", text: "Upload a backup JSON file made above. Overwrites the matching sections." }),
-        btn("Choose backup file…", "upload_file", "btn-cream btn-sm", () => fileInput.click()), fileInput))
+        btn("Choose backup file…", "upload_file", "btn-cream btn-sm", () => fileInput.click()), fileInput)),
+      panel("Base backup", "backups/portfolio-baseline.json", h("div", { class: "tool-row" },
+        h("p", { class: "text-sm muted-text", text: "Roll every section back to your saved starting point. Use this if something gets messed up." }),
+        btn("Restore base backup", "settings_backup_restore", "btn-cream btn-sm", restoreBaseline)))
     );
   }
 

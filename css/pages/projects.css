@@ -29,6 +29,15 @@
   .project-card.is-featured .project-media { height: 280px; }
 }
 .project-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
+/* shown when a project has no picture yet */
+.project-placeholder {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  background:
+    radial-gradient(circle at 30% 25%, var(--hero-glow), transparent 60%),
+    linear-gradient(135deg, var(--surface-high), var(--surface-container));
+}
+.project-placeholder .ms { font-size: 72px; color: var(--accent); opacity: .55; transition: transform .6s var(--ease); }
+.project-card:hover .project-placeholder .ms { transform: scale(1.08); }
 .project-card:hover .project-media img { transform: scale(1.04); }
 .project-labels { position: absolute; top: .9rem; left: .9rem; display: flex; flex-wrap: wrap; gap: .4rem; }
 .media-tab, .media-status, .media-badge {

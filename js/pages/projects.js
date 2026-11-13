@@ -38,7 +38,9 @@
             ${list(p.items, (it) => `
               <article class="project-card card${it.featured ? " is-featured" : ""} reveal" data-category="${esc(it.category)}">
                 <div class="project-media">
-                  ${it.image ? `<img src="${esc(it.image)}" alt="${esc(it.imageAlt || it.title)}" loading="lazy" decoding="async" />` : ""}
+                  ${it.image
+                    ? `<img src="${esc(it.image)}" alt="${esc(it.imageAlt || it.title)}" loading="lazy" decoding="async" />`
+                    : `<div class="project-placeholder" aria-hidden="true">${icon((it.imageBadge && it.imageBadge.icon) || "code")}</div>`}
                   <div class="project-labels">
                     <span class="media-tab mono">${esc(it.typeLabel)}</span>
                     ${it.statusBadge ? `<span class="media-status mono">${it.statusIcon ? icon(it.statusIcon) : '<span class="dot" aria-hidden="true"></span>'}${esc(it.statusBadge)}</span>` : ""}

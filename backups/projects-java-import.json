@@ -1,0 +1,409 @@
+{
+  "projects": {
+    "intro": "A curatorial collection of front-end applications, desktop automation systems, community databases, and sustainable cultural merchandise.",
+    "items": [
+      {
+        "id": "campus-hub",
+        "meta": "LCUP Campus",
+        "tags": [
+          "HTML5",
+          "CSS3",
+          "JavaScript (ES6+)",
+          "Responsive UI",
+          "LocalStorage",
+          "PHP"
+        ],
+        "text": "A responsive web platform designed to help university students and campus organizations track, discover, and RSVP to upcoming academic and extracurricular events in real time. Features localized caching and lightweight instant search.",
+        "image": "https://myhmomlehtdncsriqwql.supabase.co/storage/v1/object/public/portfolio-media/campus-event-mweoykng3fid.webp",
+        "title": "Campus Event Hub Calendar",
+        "number": "01 / University Tool",
+        "category": "web-dev",
+        "featured": true,
+        "imageAlt": "Campus Event Hub calendar app shown on a laptop",
+        "typeLabel": "Web Application • Front-End",
+        "imageBadge": {
+          "icon": "calendar_month",
+          "label": "Real-time RSVP"
+        },
+        "statusIcon": "",
+        "statusBadge": "Live Product",
+        "primaryButton": {
+          "url": "https://campus-event-calendar-system.onrender.com/",
+          "icon": "arrow_forward",
+          "label": "View Project Details",
+          "modal": "campus-hub",
+          "iconFirst": false
+        },
+        "secondaryButton": {
+          "url": "https://campus-event-calendar-system.onrender.com/",
+          "icon": "open_in_new",
+          "label": "Live Preview",
+          "modal": ""
+        }
+      },
+      {
+        "id": "payroll",
+        "meta": "Standalone GUI",
+        "tags": [
+          "Java",
+          "OOP",
+          "Algorithm Logic"
+        ],
+        "text": "A robust Java desktop application built to automate salary computations, calculate precise overtime pay, manage standard tax and insurance deductions, and generate formatted pay slips with strict numerical fidelity.",
+        "image": "images/project-payroll.jpg",
+        "title": "Payroll Calculator",
+        "number": "02 / Automation Logic",
+        "category": "software",
+        "featured": false,
+        "imageAlt": "Payroll calculator desktop app on a laptop",
+        "typeLabel": "Software Application",
+        "imageBadge": {
+          "icon": "terminal",
+          "label": "Java Desktop Runtime"
+        },
+        "statusIcon": "",
+        "statusBadge": "",
+        "primaryButton": {
+          "url": "https://github.com",
+          "icon": "code",
+          "label": "Source Code",
+          "modal": "",
+          "iconFirst": true
+        },
+        "secondaryButton": {
+          "url": "",
+          "icon": "description",
+          "label": "View Documentation",
+          "modal": "payroll-docs"
+        }
+      },
+      {
+        "id": "bike-rental",
+        "title": "GELACE Bike Rental System",
+        "number": "03 / Rental Operations",
+        "meta": "Console Application",
+        "category": "software",
+        "featured": false,
+        "typeLabel": "Software Application",
+        "text": "A Java console system for a bike rental shop that lists five bike types with hourly rates, collects a renter application form, then prints a receipt with the total cost, Manila-time rental start and end, and the customer's change.",
+        "tags": [
+          "Java",
+          "OOP",
+          "Console App",
+          "java.time API"
+        ],
+        "image": "",
+        "imageAlt": "",
+        "imageBadge": {
+          "icon": "pedal_bike",
+          "label": "Java Console Runtime"
+        },
+        "statusIcon": "",
+        "statusBadge": "",
+        "primaryButton": {
+          "url": "https://github.com/kevinacearellano/Car-Rental-java",
+          "icon": "code",
+          "label": "Source Code",
+          "modal": "",
+          "iconFirst": true
+        },
+        "secondaryButton": {
+          "url": "",
+          "icon": "visibility",
+          "label": "View Highlights",
+          "modal": "bike-rental"
+        }
+      },
+      {
+        "id": "inventory",
+        "title": "Inventory Management System",
+        "number": "04 / Stock Control",
+        "meta": "Console Application",
+        "category": "software",
+        "featured": false,
+        "typeLabel": "Software Application",
+        "text": "A menu-driven Java inventory system for managing products and suppliers, receiving and issuing stock with supplier validation, and viewing live stock-level reports — structured with object-oriented classes and polymorphic stock transactions.",
+        "tags": [
+          "Java",
+          "OOP",
+          "Inheritance & Polymorphism",
+          "ArrayList Collections"
+        ],
+        "image": "",
+        "imageAlt": "",
+        "imageBadge": {
+          "icon": "inventory_2",
+          "label": "Java Console Runtime"
+        },
+        "statusIcon": "",
+        "statusBadge": "",
+        "primaryButton": {
+          "url": "https://github.com/kevinacearellano/Inventory-System-Java",
+          "icon": "code",
+          "label": "Source Code",
+          "modal": "",
+          "iconFirst": true
+        },
+        "secondaryButton": {
+          "url": "",
+          "icon": "visibility",
+          "label": "View Highlights",
+          "modal": "inventory"
+        }
+      },
+      {
+        "id": "barangay",
+        "meta": "LGU Database",
+        "tags": [
+          "Microsoft Excel",
+          "Advanced Formulas",
+          "Data Validation",
+          "Record Management"
+        ],
+        "text": "An organized, high-efficiency data management solution utilizing Microsoft Excel for logging community resident profiles, issuing certificates, and streamlining local barangay administration workflow.",
+        "image": "images/project-barangay.jpg",
+        "title": "Barangay Information System",
+        "number": "05 / Civic Technology",
+        "category": "design-systems",
+        "featured": false,
+        "imageAlt": "Barangay information system dashboard",
+        "typeLabel": "Information System / Data",
+        "imageBadge": {
+          "icon": "database",
+          "label": "Basic Barangay Information System"
+        },
+        "statusIcon": "",
+        "statusBadge": "",
+        "primaryButton": {
+          "url": "",
+          "icon": "visibility",
+          "label": "View System Overview",
+          "modal": "barangay",
+          "iconFirst": false
+        },
+        "secondaryButton": {
+          "url": "",
+          "icon": "article",
+          "label": "Case Study",
+          "modal": "case-study"
+        }
+      },
+      {
+        "id": "bag",
+        "meta": "Design Competition Finalist",
+        "tags": [
+          "Creative Design",
+          "Concept Art",
+          "Cultural Heritage Research"
+        ],
+        "text": "An award-winning creative design initiative blending traditional Bulacan heritage and cultural patterns into contemporary, functional sustainable bag merchandise. Built upon extensive community research on indigenous Singkaban artistry.",
+        "image": "https://myhmomlehtdncsriqwql.supabase.co/storage/v1/object/public/portfolio-media/dti-bag-mwel628t59jq.webp",
+        "title": "DTI Bulacan Cultural Bag Design",
+        "number": "06 / Heritage & Identity",
+        "category": "design-systems",
+        "featured": true,
+        "imageAlt": "Bulacan cultural tote bag with Singkaban and Barasoain Church Design",
+        "typeLabel": "Creative Product Design",
+        "imageBadge": {
+          "icon": "palette",
+          "label": "Bulacan Heritage Series"
+        },
+        "statusIcon": "military_tech",
+        "statusBadge": "Top Design Award",
+        "primaryButton": {
+          "url": "https://www.facebook.com/photo/?fbid=740751581413763&set=pcb.740750824747172",
+          "icon": "gallery_thumbnail",
+          "label": "View Exhibition",
+          "modal": "exhibition",
+          "iconFirst": false
+        },
+        "secondaryButton": {
+          "url": "",
+          "icon": "view_carousel",
+          "label": "Design Showcase",
+          "modal": "showcase"
+        }
+      }
+    ],
+    "stats": [
+      {
+        "label": "Artifacts",
+        "value": "{count}"
+      },
+      {
+        "label": "Hand-Crafted",
+        "value": "100%"
+      },
+      {
+        "label": "Bulacan",
+        "value": "PH"
+      }
+    ],
+    "title": "Featured Engineering & Design",
+    "modals": {
+      "barangay": {
+        "tag": "Municipal Data Solution",
+        "link": "mailto:kevinace.arellano@gmail.com",
+        "text": "Streamlined local government operations across Paombong, Bulacan by structuring resident records and streamlining clearances.",
+        "title": "Barangay Information System",
+        "highlights": [
+          "Automated validation checks preventing redundant citizen records",
+          "VLOOKUP & INDEX/MATCH data querying producing printable certificates within seconds",
+          "Protected spreadsheet schemas ensuring data integrity across multiple administrative staff"
+        ]
+      },
+      "showcase": {
+        "tag": "Visual Assets & Concept Art",
+        "link": "mailto:kevinace.arellano@gmail.com",
+        "text": "Full portfolio deck covering brand narrative, typography pairing, pattern exploration, and consumer prototype reviews.",
+        "title": "Bulacan Heritage Bag — Design Showcase",
+        "highlights": [
+          "Multiple iterations crafted via Canva and vector concept art tools",
+          "Detailed color harmonies derived from native flora and folk arts",
+          "Comprehensive mockups across tote, messenger, and pouch variations"
+        ]
+      },
+      "campus-hub": {
+        "tag": "Front-End Architecture",
+        "link": "https://campus-event-calendar-system.onrender.com/",
+        "text": "Built specifically for university clubs at Bulacan State University to coordinate schedules without overlapping venues.",
+        "title": "Campus Event Hub Calendar",
+        "highlights": [
+          "State persistence handled through clean LocalStorage abstraction layers",
+          "Responsive layout adapts cleanly from single-column mobile viewports to calendar grids",
+          "Search query parser with instant debounced results"
+        ]
+      },
+      "case-study": {
+        "tag": "Civic Process Modernization",
+        "link": "mailto:kevinace.arellano@gmail.com",
+        "text": "A complete workflow audit illustrating how manual paper filing was replaced by structured record management, cutting issuance processing time by 70%.",
+        "title": "Barangay Information System — Case Study",
+        "highlights": [
+          "Stakeholder interviews conducted with local barangay executives",
+          "Zero-software-overhead deployment targeting existing spreadsheet installations",
+          "Structured schema documentation and staff onboarding guide"
+        ]
+      },
+      "exhibition": {
+        "tag": "Creative Merchandise & Identity",
+        "link": "https://www.facebook.com/photo/?fbid=740751581413763&set=pcb.740750824747172",
+        "text": "A fusion of historical Bulakenyo crafts with modern everyday fashion, featuring iconic bamboo carving and festive Singkaban silhouettes.",
+        "title": "Bulacan Cultural Bag Design",
+        "highlights": [
+          "Recognized as a leading entry in regional cultural design showcases",
+          "Sustainable canvas and jute material specifications",
+          "Aryclic Paint and Canvas honoring traditional festival aesthetics and national heritage"
+        ]
+      },
+      "payroll-docs": {
+        "tag": "Java Application Architecture",
+        "link": "https://github.com",
+        "text": "Comprehensive employee payroll engine managing regular hours, Philippine statutory contributions (SSS, PhilHealth, Pag-IBIG), and overtime multipliers.",
+        "title": "Payroll Calculator & Tax Deductor",
+        "highlights": [
+          "Strict Object-Oriented Design isolating computation algorithms from UI rendering",
+          "Robust exception-handling for invalid employee data entry",
+          "Modular printable slip formatter with clean tabular alignment",
+          "Swing/AWT components styled for clarity and ergonomic data entry"
+        ]
+      },
+      "bike-rental": {
+        "tag": "Java Console Application",
+        "title": "GELACE Bike Rental System",
+        "text": "A complete rental flow in the terminal — from choosing a bike to printing the receipt — built as an object-oriented Java program.",
+        "highlights": [
+          "Bike catalog stored in parallel arrays (Road, Mountain, Fixie, Fat, Folding) with per-hour pricing in PHP",
+          "Menu loop with input validation and an exit option, using a switch on the selected bike",
+          "Separate RentalForm class captures renter name, address, gender and age for the receipt",
+          "Computes total cost by rental hours, then shows start and end times in Asia/Manila time via java.time",
+          "Accepts payment and calculates the customer's change"
+        ],
+        "link": "https://github.com/kevinacearellano/Car-Rental-java"
+      },
+      "inventory": {
+        "tag": "Java Console Application",
+        "title": "Inventory Management System",
+        "text": "A modular inventory tool with separate managers for products, suppliers and stock movement, designed around core OOP principles.",
+        "highlights": [
+          "Product CRUD: add, view, search by ID, update and delete items",
+          "Supplier records (ID, name, contact) used to validate every stock delivery",
+          "Abstract Transaction class with ReceiveStock and IssueStock subclasses — polymorphic stock processing",
+          "Dedicated InventoryManager, SupplierManager and StockManager classes for clean separation of concerns",
+          "Stock-level and product reports from the main menu"
+        ],
+        "link": "https://github.com/kevinacearellano/Inventory-System-Java"
+      }
+    },
+    "eyebrow": "Selected Works • 2022 – Present",
+    "filters": [
+      {
+        "id": "web-dev",
+        "label": "Web Dev"
+      },
+      {
+        "id": "software",
+        "label": "Software"
+      },
+      {
+        "id": "design-systems",
+        "label": "Design & Systems"
+      }
+    ],
+    "pageTitle": "Projects | Kevin Ace G. Arellano",
+    "emptyState": {
+      "text": "Try selecting a different filter category to explore other technical and creative works.",
+      "title": "No matching projects found",
+      "button": "Reset to All Works"
+    },
+    "filterHint": "Interactive Filter View",
+    "philosophy": {
+      "icon": "developer_board",
+      "text": "My development lifecycle treats every artifact — whether a strict Java computation engine or an event scheduling single-page app — with equal care for responsive performance, usability, and local context.",
+      "cards": [
+        {
+          "tag": "Web Standard",
+          "icon": "devices",
+          "text": "Cross-browser tested interfaces designed to run cleanly even on constrained campus hardware.",
+          "title": "Accessible & Fluid"
+        },
+        {
+          "tag": "Integrity",
+          "icon": "verified_user",
+          "text": "Fault-tolerant mathematical modeling in desktop apps and structured Excel formulas.",
+          "title": "Robust Computations"
+        },
+        {
+          "tag": "Heritage",
+          "icon": "forest",
+          "text": "Deep design roots tied to Bulacan’s historic crafts, transformed into modern visuals.",
+          "title": "Regional Identity"
+        },
+        {
+          "tag": "Optimization",
+          "icon": "speed",
+          "text": "Prioritizing zero fluff, ultra-fast load times, and structured code architecture.",
+          "title": "Clean Execution"
+        }
+      ],
+      "title": "From Algorithmic Precision to Culturally Aware Design",
+      "eyebrow": "Engineering Philosophy",
+      "linkButton": {
+        "href": "https://github.com/kevinacearellano",
+        "icon": "arrow_outward",
+        "label": "Inspect on GitHub"
+      },
+      "primaryButton": {
+        "href": "mailto:kevinace.arellano@gmail.com",
+        "icon": "send",
+        "label": "Discuss a Project"
+      }
+    },
+    "modalLabels": {
+      "button": "Explore Source",
+      "heading": "Key Technical Highlights",
+      "fallbackTag": "Artifact Insight"
+    },
+    "allFilterLabel": "All Works"
+  }
+}

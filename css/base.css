@@ -9,7 +9,6 @@
   --surface-low: #fff3d2;
   --surface-container: #faedc9;
   --surface-high: #f4e8c4;
-  --surface-highest: #eee2bf;
   --surface-dim: #e5d9b6;
   --card: #ffffff;               /* raised cards */
   --card-soft: rgba(255, 255, 255, .6);
@@ -40,8 +39,6 @@
   /* misc surfaces */
   --header-bg: rgba(255, 249, 239, .88);
   --glass: rgba(255, 249, 239, .93);
-  --hero-a: #fdf5d8;
-  --hero-b: #f9f2da;
   --hero-glow: rgba(214, 238, 190, .7);
   --avail-bg: rgba(189, 241, 167, .4);
   --err-bg: #ffdad6;
@@ -86,7 +83,6 @@
   --surface-low: #18241a;
   --surface-container: #1f2e22;
   --surface-high: #263828;
-  --surface-highest: #2d422f;
   --card: #152017;
   --card-soft: rgba(255, 255, 255, .04);
   --tint: rgba(255, 255, 255, .03);
@@ -108,8 +104,6 @@
 
   --header-bg: rgba(15, 23, 17, .85);
   --glass: rgba(15, 23, 17, .85);
-  --hero-a: #152118;
-  --hero-b: #101912;
   --hero-glow: rgba(95, 141, 78, .22);
   --avail-bg: rgba(164, 190, 123, .16);
   --err-bg: #4a1512;
