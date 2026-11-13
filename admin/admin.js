@@ -14,7 +14,7 @@
     skills:     { title: "Skills",              icon: "construction", desc: "Skill categories, each skill card and the developer philosophy section." },
     projects:   { title: "Projects",            icon: "folder_open",  desc: "Project cards, filters and the details popups (Modals)." },
     experience: { title: "Experience",          icon: "work_history", desc: "Jobs, responsibilities, strengths and competency bars." },
-    education:  { title: "Education & Certs",   icon: "school",       desc: "Degrees, coursework, certifications and distinctions." },
+    education:  { title: "Education & Certificates", icon: "school",       desc: "Degrees, coursework, certifications and distinctions." },
     contact:    { title: "Contact",             icon: "mail",         desc: "Availability, work models, contact form labels and FAQ." },
     resume:     { title: "Resume",              icon: "description",  desc: "Your resume is built automatically from Site info, Experience, Education, Skills, Projects and Certifications. Here you choose what it shows and add resume-only details. Empty fields use your portfolio content." }
   };
