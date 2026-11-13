@@ -237,9 +237,22 @@
   window.addEventListener("beforeunload", (e) => { if (state.dirty.size) { e.preventDefault(); e.returnValue = ""; } });
 
   /* ================================ screens ================================ */
+  /** Your logo image (Site & Contact Info → Logo), or the monogram if none is set. Also updates the tab icon. */
+  function adminBrandMark() {
+    const site = state.sections.site || {};
+    const logo = (site.logo || "").trim();
+    if (logo) {
+      document.querySelectorAll('link[rel~="icon"]').forEach((l) => { l.href = previewSrc(logo); });
+      const img = h("img", { class: "brand-logo brand-logo--md", src: previewSrc(logo), alt: "" });
+      const mono = h("span", { class: "brand-mono brand-mono--md", text: site.monogram || "KA", hidden: true });
+      img.addEventListener("error", () => { img.hidden = true; mono.hidden = false; });
+      return h("span", { class: "adm-brand-mark" }, img, mono);
+    }
+    return h("span", { class: "brand-mono brand-mono--md", text: site.monogram || "KA" });
+  }
   function centerCard(...children) {
     app.replaceChildren(h("div", { class: "adm-center" }, h("div", { class: "auth-card card" },
-      h("div", { class: "auth-brand" }, h("span", { class: "brand-mono brand-mono--md", text: (state.sections.site && state.sections.site.monogram) || "KA" }),
+      h("div", { class: "auth-brand" }, adminBrandMark(),
         h("span", {}, h("strong", { text: "Portfolio Admin" }), h("small", { class: "mono", text: "Content manager" }))),
       ...children)));
   }
@@ -420,7 +433,7 @@
     app.replaceChildren(
       h("header", { class: "adm-top" },
         h("div", { class: "adm-top-brand" },
-          h("span", { class: "brand-mono brand-mono--md", text: site.monogram || "KA" }),
+          adminBrandMark(),
           h("span", {}, h("strong", { text: "Portfolio Admin" }), h("small", { class: "mono", text: state.user.email }))),
         h("div", { class: "adm-top-actions" },
           h("a", { class: "btn btn-cream btn-sm", href: "../index.html", target: "_blank", rel: "noopener" }, icon("open_in_new"), h("span", { class: "hide-sm", text: "View site" })),
@@ -621,16 +634,32 @@
       const f = file.files[0]; file.value = "";
       if (!f) return;
       upBtn.disabled = true;
-      const url = await uploadFile(f);
+      const url = await uploadFile(f, { logo: isLogo });
       upBtn.disabled = false;
       if (url) { set(url); toast("Image uploaded — remember to save"); }
     });
+    const isLogo = key === "logo";
     const upBtn = btn("Upload", "upload", "btn-cream btn-sm", () => file.click());
+    // re-process an already-chosen logo (trim margins, drop plain background, square PNG)
+    const fitBtn = isLogo ? btn("Fit logo", "crop_free", "btn-cream btn-sm", async () => {
+      const cur = input.value.trim();
+      if (!cur) return toast("Choose a logo first", "info");
+      fitBtn.disabled = true;
+      try {
+        const res = await fetch(previewSrc(cur));
+        if (!res.ok) throw new Error("Couldn't download the current image");
+        const blob = await res.blob();
+        const name = (cur.split("/").pop() || "logo").split("?")[0];
+        const url = await uploadFile(new File([blob], name, { type: blob.type }), { logo: true });
+        if (url) { set(url); toast("Logo fitted — remember to save"); }
+      } catch (err) { toast(errMsg(err), "error"); }
+      fitBtn.disabled = false;
+    }, { title: "Trim empty space and remove plain background so all logos match in size" }) : null;
     sync();
     return h("div", { class: "field span-2" }, labelFor(id, key),
       h("div", { class: "image-field" }, thumb,
         h("div", { class: "image-field-main" }, input,
-          h("div", { class: "btn-row" }, upBtn, file,
+          h("div", { class: "btn-row" }, upBtn, file, fitBtn,
             btn("Choose from library", "photo_library", "btn-cream btn-sm", () => openMediaPicker(set)),
             btn("Remove", "close", "btn-text btn-sm", () => set(""))))),
       hint(key));
@@ -767,6 +796,7 @@
     state.updated[key] = data.updated_at;
     state.dirty.delete(key);
     toast(`${(SECTION_META[key] || {}).title || humanize(key)} saved — live on your site`);
+    if (key === "site") { const brand = $(".adm-top-brand"); if (brand && brand.firstChild) brand.firstChild.replaceWith(adminBrandMark()); }
     if (state.current === key && state.view === "section") renderSection();
     else updateDirtyUI();
   }
@@ -821,12 +851,75 @@
     return new File([blob], f.name.replace(/\.[^.]+$/, "") + ".webp", { type: "image/webp" });
   }
 
-  async function uploadFile(original) {
+  /* Logos: remove a plain background (white/solid color touching the edges), crop the empty
+     margins and center the result on a square transparent PNG, so every logo renders the same size. */
+  const LOGO_SIZE = 512;
+  const LOGO_PAD = 0.04;   // breathing room around the logo (share of the square)
+  async function fitLogo(f) {
+    if (f.type === "image/gif" || f.type === "image/svg+xml" || !window.createImageBitmap) return f;
+    let bmp;
+    try { bmp = await createImageBitmap(f); } catch (e) { return f; }
+    const W = bmp.width, H = bmp.height;
+    const src = document.createElement("canvas");
+    src.width = W; src.height = H;
+    const ctx = src.getContext("2d", { willReadFrequently: true });
+    ctx.drawImage(bmp, 0, 0);
+    if (bmp.close) bmp.close();
+    const img = ctx.getImageData(0, 0, W, H), px = img.data;
+
+    // background = the corner color, if the corners agree and are opaque
+    const at = (x, y) => (y * W + x) * 4;
+    const corners = [at(0, 0), at(W - 1, 0), at(0, H - 1), at(W - 1, H - 1)];
+    const near = (i, j, tol) => Math.abs(px[i] - px[j]) + Math.abs(px[i + 1] - px[j + 1]) + Math.abs(px[i + 2] - px[j + 2]) <= tol;
+    const solidBg = corners.every((c) => px[c + 3] > 240 && near(c, corners[0], 30));
+    if (solidBg) {
+      // flood-fill from the edges: background-colored pixels connected to the border become transparent
+      const ref = corners[0], seen = new Uint8Array(W * H), stack = [];
+      for (let x = 0; x < W; x++) stack.push(x, (H - 1) * W + x);
+      for (let y = 0; y < H; y++) stack.push(y * W, y * W + W - 1);
+      while (stack.length) {
+        const p = stack.pop();
+        if (seen[p]) continue;
+        seen[p] = 1;
+        const i = p * 4;
+        if (px[i + 3] < 16 || !near(i, ref, 60)) continue;
+        px[i + 3] = 0;
+        const x = p % W;
+        if (x > 0) stack.push(p - 1);
+        if (x < W - 1) stack.push(p + 1);
+        if (p >= W) stack.push(p - W);
+        if (p < W * (H - 1)) stack.push(p + W);
+      }
+      ctx.putImageData(img, 0, 0);
+    }
+
+    // bounding box of the visible pixels
+    let x0 = W, y0 = H, x1 = -1, y1 = -1;
+    for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) {
+      if (px[at(x, y) + 3] > 16) { if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y; }
+    }
+    if (x1 < 0) return f;   // nothing visible — keep original
+    const bw = x1 - x0 + 1, bh = y1 - y0 + 1;
+    const out = document.createElement("canvas");
+    out.width = out.height = LOGO_SIZE;
+    const inner = LOGO_SIZE * (1 - LOGO_PAD * 2);
+    const s = inner / Math.max(bw, bh);
+    const dw = bw * s, dh = bh * s;
+    const octx = out.getContext("2d");
+    octx.imageSmoothingQuality = "high";
+    octx.drawImage(src, x0, y0, bw, bh, (LOGO_SIZE - dw) / 2, (LOGO_SIZE - dh) / 2, dw, dh);
+    const blob = await new Promise((res) => out.toBlob(res, "image/png"));
+    if (!blob) return f;
+    return new File([blob], f.name.replace(/\.[^.]+$/, "") + "-logo.png", { type: "image/png" });
+  }
+
+  async function uploadFile(original, { logo = false } = {}) {
     const problem = validateFile(original);
     if (problem) { toast(`${original.name}: ${problem}`, "error"); return null; }
-    const f = await compressImage(original);
+    const f = logo ? await fitLogo(original) : await compressImage(original);
+    if (logo && f !== original) toast("Logo trimmed & centered", "info");
     if (f.size > MAX_UPLOAD) { toast(`${original.name}: still larger than ${MAX_UPLOAD / 1048576} MB after compression.`, "error"); return null; }
-    if (f !== original) toast(`Optimized ${original.name}: ${fmtSize(original.size)} → ${fmtSize(f.size)}`, "info");
+    if (!logo && f !== original) toast(`Optimized ${original.name}: ${fmtSize(original.size)} → ${fmtSize(f.size)}`, "info");
     const ext = { "image/jpeg": "jpg", "image/png": "png", "image/webp": "webp", "image/gif": "gif", "image/svg+xml": "svg" }[f.type];
     const base = f.name.replace(/\.[^.]+$/, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 40) || "image";
     const name = `${base}-${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}.${ext}`;

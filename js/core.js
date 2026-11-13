@@ -37,8 +37,20 @@
   }
 
   const brandMark = (size) => D.site.logo
-    ? `<img class="brand-logo brand-logo--${size}" src="${esc(D.site.logo)}" alt="" />`
+    ? `<img class="brand-logo brand-logo--${size}" src="${esc(safeUrl(D.site.logo))}" alt="" />`
     : `<span class="brand-mono brand-mono--${size}" aria-hidden="true">${esc(D.site.monogram)}</span>`;
+
+  // browser-tab icon = your uploaded logo (falls back to the built-in monogram icon in the HTML)
+  function setFavicon() {
+    if (!D.site || !D.site.logo) return;
+    const href = safeUrl(D.site.logo);
+    document.querySelectorAll('link[rel~="icon"], link[rel="apple-touch-icon"]').forEach((l) => l.remove());
+    for (const rel of ["icon", "apple-touch-icon"]) {
+      const link = document.createElement("link");
+      link.rel = rel; link.href = href;
+      document.head.appendChild(link);
+    }
+  }
 
   const availabilityBadge = (extra = "") =>
     `<span class="availability ${extra}"><span class="pulse" aria-hidden="true"></span>${esc(D.site.availability)}</span>`;
@@ -272,6 +284,7 @@
     }
     renderHeader();
     renderFooter();
+    setFavicon();
     initTheme();
     initAdminShortcut();
     if (main && renderers[page]) {

@@ -368,8 +368,10 @@ ul { padding: 0; list-style: none; }
 }
 .brand-mono--md { width: 2.4rem; height: 2.4rem; font-size: .95rem; }
 .brand-mono--sm { width: 1.9rem; height: 1.9rem; font-size: .75rem; border-radius: 8px; }
-.brand-logo--md { height: 2.4rem; width: auto; }
-.brand-logo--sm { height: 1.9rem; width: auto; }
+.brand-logo { display: block; flex-shrink: 0; object-fit: contain; }
+.brand-logo--md { height: 2.4rem; width: 2.4rem; }
+.brand-logo--sm { height: 1.9rem; width: 1.9rem; }
+.brand-mono { overflow: hidden; white-space: nowrap; }   /* long monogram text can't spill out of the box */
 
 .header-actions { display: flex; align-items: center; gap: .6rem; }
 .header-cta, .site-header .availability--header { display: none; }
@@ -543,10 +545,7 @@ main { padding-top: var(--header-h); min-height: 70vh; }
 .footer-socials a { display: inline-flex; align-items: center; gap: .4rem; font-size: 12.5px; color: var(--text-variant); transition: color .2s; }
 .footer-socials a:hover, .footer-email:hover { color: var(--accent); }
 .footer-socials .ms { font-size: 18px; }
-.footer-socials .social-logo {
-  width: 20px; height: 20px; padding: 2px; object-fit: contain;
-  border-radius: 5px; background: #ffffff;
-}
+.footer-socials .social-logo { width: 20px; height: 20px; object-fit: contain; border-radius: 4px; }
 .footer-email { font-size: 12.5px; color: var(--secondary); transition: color .2s; word-break: break-all; }
 .footer-bottom {
   display: flex; flex-direction: column; gap: .5rem;

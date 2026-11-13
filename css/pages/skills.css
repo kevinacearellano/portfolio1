@@ -32,14 +32,9 @@
 .skill-card:hover .icon-box--cream { background: var(--primary-container); color: var(--white); }
 .skill-card .icon-box { transition: background .25s, color .25s, transform .25s var(--ease); }
 
-/* real software logo (uploaded in admin) — light tile so dark & colored logos stay visible in both themes */
-.skill-logo {
-  width: 3rem; height: 3rem; padding: .5rem;
-  border-radius: var(--r-md);
-  background: #ffffff;
-  box-shadow: 0 0 0 1px var(--hairline), 0 2px 8px rgba(0, 0, 0, .12);
-}
-.skill-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
+/* real software logo (uploaded in admin) — shown as-is, no tile, same size as the contact logos */
+.skill-logo { width: 2.75rem; height: 2.75rem; background: none; }
+.skill-logo img { width: 100%; height: 100%; object-fit: contain; display: block; border-radius: var(--r-sm); }
 .skill-card:hover .skill-logo { transform: translateY(-2px) scale(1.05); }
 
 .principle-card { display: flex; flex-direction: column; overflow: hidden; }
