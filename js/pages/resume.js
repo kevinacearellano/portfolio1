@@ -89,7 +89,7 @@
     /* ---- certifications & awards ---- */
     const certs = (D.education && D.education.certifications) || [];
     const certifications = certs.length ? `<ul class="rs-bullets">${list(certs, (c) => {
-      const extra = [text(c.issuer), text(c.badge)].filter(Boolean).join(" · ");
+      const extra = [text(c.issuer), text(c.badge), text(c.date)].filter(Boolean).join(" · ");
       return `<li><strong>${esc(c.title)}</strong>${extra ? ` — ${esc(extra)}` : ""}</li>`;
     })}</ul>` : "";
 

@@ -79,6 +79,25 @@
   background: var(--surface-high); box-shadow: 0 0 0 1px var(--hairline), var(--shadow-1);
 }
 .verify-banner .h-sm { margin-bottom: .25rem; }
+
+/* credential details under a certificate */
+.cert-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .6rem 1rem; padding-top: .25rem; }
+.cert-meta { display: flex; flex-wrap: wrap; gap: .4rem 1rem; font-size: 10.5px; color: var(--text-variant); }
+.cert-meta span, .event-meta span { display: inline-flex; align-items: center; gap: .3rem; }
+.cert-meta .ms, .event-meta .ms { font-size: 15px; color: var(--secondary); }
+.cert-link { display: inline-flex; align-items: center; gap: .35rem; font-size: 11px; font-weight: 600; color: var(--accent); transition: gap .2s var(--ease); }
+.cert-link .ms { font-size: 15px; }
+.cert-link:hover { gap: .55rem; text-decoration: underline; }
+.cert-logo { padding: .35rem; background: none; }
+.cert-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
+
+/* seminars & programs */
+.event-grid { display: grid; gap: 1rem; margin-top: 1rem; }
+@media (min-width: 768px) { .event-grid { grid-template-columns: repeat(3, 1fr); } }
+.event-card { display: flex; flex-direction: column; gap: .7rem; padding: 1.4rem; }
+.event-top { display: flex; justify-content: space-between; align-items: flex-start; gap: .5rem; }
+.event-theme { font-size: .85rem; font-style: italic; color: var(--secondary); }
+.event-meta { display: flex; flex-direction: column; gap: .35rem; font-size: 10.5px; color: var(--text-variant); margin-top: auto; padding-top: .4rem; }
 .verify-banner .btn { justify-self: start; }
 @media (min-width: 768px) {
   .verify-banner { grid-template-columns: auto 1fr auto; padding: 1.75rem 2rem; }

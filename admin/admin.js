@@ -27,6 +27,7 @@
   const OPTIONAL_FIELDS = {
     "skills.categories.items": { logo: "" },
     "contact.profiles": { logo: "" },
+    "education.certifications": { date: "", credentialId: "", link: "", logo: "" },
     "site.socials": { logo: "" }
   };
 

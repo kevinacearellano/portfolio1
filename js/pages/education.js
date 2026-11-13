@@ -1,7 +1,20 @@
 /* Education page (education.html) — renders the "education" section loaded by core.js */
 (function () {
   "use strict";
-  const { D, esc, icon, list, button } = window.Portfolio;
+  const { D, esc, icon, list, button, hrefAttrs, safeUrl } = window.Portfolio;
+
+  // optional credential details shown under a certificate: date · ID · verify link
+  const certMeta = (c) => {
+    const bits = [];
+    if (c.date) bits.push(`<span>${icon("event")}${esc(c.date)}</span>`);
+    if (c.credentialId) bits.push(`<span>${icon("tag")}ID: ${esc(c.credentialId)}</span>`);
+    const meta = bits.length ? `<div class="cert-meta mono">${bits.join("")}</div>` : "";
+    const link = c.link ? `<a class="cert-link mono" ${hrefAttrs(c.link)}>${icon("open_in_new")}${esc(c.linkLabel || "Verify credential")}</a>` : "";
+    return meta || link ? `<div class="cert-foot">${meta}${link}</div>` : "";
+  };
+  const certMark = (c) => c.logo
+    ? `<span class="icon-box icon-box--lg cert-logo"><img src="${esc(safeUrl(c.logo))}" alt="" loading="lazy" decoding="async" /></span>`
+    : `<span class="icon-box icon-box--lg ${c.iconStyle === "green" ? "icon-box--sage" : "icon-box--cream"}">${icon(c.icon)}</span>`;
 
   function renderEducation(root) {
     const e = D.education;
@@ -52,14 +65,16 @@
                       <span class="chip-dark">${esc(d.imageBadge)}</span>
                     </figcaption>
                   </figure>` : ""}
+                  ${(d.coursework || []).length ? `
                   <p class="eyebrow-sm eyebrow-sm--green">${esc(d.courseworkTitle)}</p>
-                  <ul class="tag-list tag-list--lg">${list(d.coursework, (c) => `<li class="tag tag--sand tag--icon tag--lg">${icon(c.icon)}${esc(c.label)}</li>`)}</ul>
+                  <ul class="tag-list tag-list--lg">${list(d.coursework, (c) => `<li class="tag tag--sand tag--icon tag--lg">${icon(c.icon)}${esc(c.label)}</li>`)}</ul>` : ""}
                 </div>
+                ${d.progress && d.progress.label ? `
                 <div class="degree-progress mono">
                   <p><span>${esc(d.progress.label)}</span><strong>${esc(d.progress.status)}</strong></p>
                   <div class="meter" role="meter" aria-label="${esc(d.progress.label)}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${Number(d.progress.percent) || 0}"><span style="--w:${Number(d.progress.percent) || 0}%"></span></div>
                   <p><span>${esc(d.progress.left)}</span><span class="strong">${esc(d.progress.right)}</span></p>
-                </div>
+                </div>` : ""}
               </article>`)}
             <article class="focus-card reveal">
               <span class="icon-box icon-box--sage">${icon(e.focusCard.icon)}</span>
@@ -71,16 +86,16 @@
             ${sectionHead(e.certificationsHeading)}
             ${list(e.certifications, (c) => `
               <article class="cert-card card reveal">
-                <span class="icon-box icon-box--lg ${c.iconStyle === "green" ? "icon-box--sage" : "icon-box--cream"}">${icon(c.icon)}</span>
+                ${certMark(c)}
                 <div class="cert-body">
                   <div class="cert-top">
                     <span class="tag ${c.badgeStyle === "dark" ? "tag--dark" : "tag--sage"}">${esc(c.badge)}</span>
                     <span class="cert-issuer mono">${esc(c.issuer)}</span>
-                    <span class="cert-status mono">${icon(c.status.icon)}${esc(c.status.label)}</span>
+                    ${c.status && c.status.label ? `<span class="cert-status mono">${icon(c.status.icon)}${esc(c.status.label)}</span>` : ""}
                   </div>
                   <h3 class="h-md">${esc(c.title)}</h3>
                   <p class="text-md muted-text">${esc(c.text)}</p>
-                  ${c.gallery ? `
+                  ${(c.gallery || []).length ? `
                   <div class="cert-gallery">
                     ${list(c.gallery, (g) => `
                       <figure><img src="${esc(g.image)}" alt="${esc(g.alt)}" loading="lazy" decoding="async" /><figcaption class="chip-dark mono">${esc(g.caption)}</figcaption></figure>`)}
@@ -91,15 +106,42 @@
                       <small>${esc(c.galleryCard.text)}</small>
                     </div>` : ""}
                   </div>` : ""}
+                  ${(c.skills || []).length ? `
                   <div class="skill-box mono">
                     <span class="skill-box-label">${esc(c.skillsLabel)}</span>
                     ${list(c.skills, (s) => `<span>${esc(s)}</span>`)}
-                  </div>
+                  </div>` : ""}
+                  ${certMeta(c)}
                 </div>
               </article>`)}
           </div>
         </div>
       </section>
+
+      ${(e.events || []).length ? `
+      <section class="section section--tight-top">
+        <div class="container">
+          ${sectionHead(e.eventsHeading || { icon: "groups", title: "Seminars & Programs", label: "03 / Events" })}
+          <div class="event-grid">
+            ${list(e.events, (ev) => `
+              <article class="event-card card reveal">
+                <div class="event-top">
+                  <span class="icon-box icon-box--sage">${icon(ev.icon || "event")}</span>
+                  ${ev.type ? `<span class="tag tag--sage">${esc(ev.type)}</span>` : ""}
+                </div>
+                <h3 class="h-sm">${esc(ev.title)}</h3>
+                ${ev.theme ? `<p class="event-theme">“${esc(ev.theme)}”</p>` : ""}
+                ${ev.text ? `<p class="text-sm muted-text">${esc(ev.text)}</p>` : ""}
+                <div class="event-meta mono">
+                  ${ev.organizer ? `<span>${icon("apartment")}${esc(ev.organizer)}</span>` : ""}
+                  ${ev.date ? `<span>${icon("event")}${esc(ev.date)}</span>` : ""}
+                  ${ev.location ? `<span>${icon("location_on")}${esc(ev.location)}</span>` : ""}
+                </div>
+                ${ev.link ? `<a class="cert-link mono" ${hrefAttrs(ev.link)}>${icon("open_in_new")}${esc(ev.linkLabel || "View post")}</a>` : ""}
+              </article>`)}
+          </div>
+        </div>
+      </section>` : ""}
 
       <section class="section section--tight-top">
         <div class="container">
